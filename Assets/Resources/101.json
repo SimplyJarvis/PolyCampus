@@ -1,0 +1,26 @@
+{
+  "room": [
+    {
+      "roomName": "101",
+      "infoPoint": [
+        {
+          "itemName": "HPC",
+          "itemDesc": "The High Performance Computing cluster is located next to SMB 109, its used for research across the university"
+        },
+        {
+          "itemName": "test2",
+          "itemDesc": "blah"
+        }
+      ]
+    },
+    {
+      "roomName": "102",
+      "infoPoint": [
+        {
+          "itemName": "test",
+          "itemDesc": "blah"
+        }
+      ]
+    }
+  ]
+}
