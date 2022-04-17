@@ -12,22 +12,36 @@ public class PopUpItem : MonoBehaviour
     GameObject playerCamera;
     [SerializeField]
     Vector3 initRotation;
+    [SerializeField]
+    bool isUI = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.rotation = Quaternion.Euler(initRotation);
-        transform.localScale = Vector3.zero;
+        if (isUI)
+        {
+            transform.rotation = Quaternion.Euler(initRotation);
+            transform.localScale = Vector3.zero;
+        }
+
     }
 
     void OnBecameVisible()
     {
-        StartCoroutine(ScaleUp());
+        if (isUI)
+        {
+            StartCoroutine(ScaleUp());
+        }
+        
     }
 
     void OnBecameInvisible()
     {
-        StartCoroutine(ScaleDown());
+        if (isUI)
+        {
+            StartCoroutine(ScaleDown());
+        }
+        
     }
 
     void OnMouseDown()

@@ -20,7 +20,7 @@ public class CameraManager : MonoBehaviour
     Vector2 cameraMousePos;
     Camera MainCamera;
     Transform activeFloor;
-
+    Vector2 mouseStart;
 
     Vector3 CameraPos = Vector3.zero;
 
@@ -40,37 +40,49 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
-        
-         CameraPos = new Vector3(activeFloor.position.x + cameraOffset, CameraObject.transform.position.y, CameraPos.z);
+
+        CameraPos = new Vector3(activeFloor.position.x + cameraOffset, CameraObject.transform.position.y, CameraPos.z);
 
 
 
         cameraMousePos = MainCamera.ScreenToViewportPoint(Input.mousePosition) - new Vector3(0.5f, 0.5f, 0);
-        if (Input.GetMouseButton(1))
+
+        if (Input.GetMouseButtonDown(1))
         {
-            CameraPos.z += (cameraMousePos.x - cameraMousePos.y) < -0.1f || (cameraMousePos.x - cameraMousePos.y) > 0.1f ? (cameraMousePos.x - cameraMousePos.y) / (cameraSpeed) : 0f ;
-            cameraOffset -= (cameraMousePos.y + cameraMousePos.x) < -0.1f || (cameraMousePos.y + cameraMousePos.x) > 0.1f ? (cameraMousePos.y + cameraMousePos.x) / (cameraSpeed) : 0f ;
+            mouseStart = MainCamera.ScreenToViewportPoint(Input.mousePosition) - new Vector3(0.5f, 0.5f, 0);
         }
 
-        //if (Mathf.Abs(CameraObject.transform.position.x - activeFloor.position.x) < 10f)
-        //cameraOffset = Mathf.MoveTowards(cameraOffset, 0, Time.deltaTime * 3.5f);
-        
-        CameraObject.transform.position = Vector3.Lerp(CameraObject.transform.position, CameraPos, Time.deltaTime * 3.5f);
-        
-        
+        if (Input.GetMouseButton(1))
+        {
+            Vector2 currentMousePos = MainCamera.ScreenToViewportPoint(Input.mousePosition) - new Vector3(0.5f, 0.5f, 0);
+            Vector2 mouseDifference = (mouseStart - currentMousePos);
+            CameraPos.z -= (mouseDifference.x - mouseDifference.y) < -0.05f || (mouseDifference.x - mouseDifference.y) > 0.05f ? (mouseDifference.x - mouseDifference.y) / (cameraSpeed) : 0f;
+            //Debug.Log(cameraOffset);
+            if (cameraOffset > -8f && cameraOffset < 15f)
+            {
+                cameraOffset += (mouseDifference.y + mouseDifference.x) < -0.05f || (mouseDifference.y + mouseDifference.x) > 0.05f ? (mouseDifference.y + mouseDifference.x) / (cameraSpeed) : 0f;
+            }
+            else 
+            {
+                cameraOffset = Mathf.MoveTowards(cameraOffset, 0, Time.deltaTime * 2f);
+            }
+            
+        }
 
+
+        CameraObject.transform.position = Vector3.Lerp(CameraObject.transform.position, CameraPos, Time.deltaTime * 3.5f);
         MainCamera.orthographicSize = Mathf.Lerp(MainCamera.orthographicSize, zoomLevel, Time.deltaTime * 3.5f);
-        
+
     }
 
     void OnGUI()
     {
-        if (zoomLevel > 1 || Input.mouseScrollDelta.y < 0f)
+        if (zoomLevel > 2 || Input.mouseScrollDelta.y < 0f)
         {
             if (zoomLevel < 9 || Input.mouseScrollDelta.y > 0f)
             {
-            zoomLevel -= Input.mouseScrollDelta.y * scrollScale;
-            cameraSpeed += Input.mouseScrollDelta.y / 2;
+                zoomLevel -= Input.mouseScrollDelta.y * scrollScale;
+                cameraSpeed += Input.mouseScrollDelta.y / 2;
             }
         }
     }
