@@ -47,8 +47,9 @@ public class UIManager : MonoBehaviour
     {
         popUpContent.SetText(content);
         popUpTitle.SetText(title);
-        float height = (popUpContainer.sizeDelta.y * popUpContainer.localScale.y) * canvas.localScale.y;
-        Debug.Log(height);
+        float height = ((popUpContainer.sizeDelta.y * popUpContainer.localScale.y) * canvas.localScale.y) + popUpHeightOffset;
+        
+        StopAllCoroutines();
         StartCoroutine(MovePopUp(height, false));
         StartCoroutine(MovePopUp(0f, true));
     }
@@ -61,9 +62,7 @@ public class UIManager : MonoBehaviour
         while (Mathf.Abs(popUpContainer.position.y - newHeight) > 0.1f)
         {
             curveTime += Time.deltaTime;
-            popUpContainer.position = Vector3.MoveTowards(popUpContainer.position, new Vector3(popUpContainer.position.x, newHeight, popUpContainer.position.z), popUpCurve.Evaluate(curveTime) * popUpSpeed);
-            
-            Debug.Log(popUpContainer.position.y != newHeight);
+            popUpContainer.position = Vector3.Lerp(popUpContainer.position, new Vector3(popUpContainer.position.x, newHeight, popUpContainer.position.z), popUpCurve.Evaluate(curveTime) * popUpSpeed);
             yield return null;
         }
         
