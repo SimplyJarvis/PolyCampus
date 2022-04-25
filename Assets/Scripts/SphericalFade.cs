@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SphericalFade : MonoBehaviour
 {
@@ -13,10 +14,12 @@ public class SphericalFade : MonoBehaviour
     float SphereRadius;
     [SerializeField]
     float SphereGrowSpeed;
+    bool toggleSphere;
 
     RaycastHit hit;
     Ray ray;
     int layerMask;
+    bool isMouse = true;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +31,15 @@ public class SphericalFade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Input.GetMouseButton(0))
+        if (isMouse){
+            ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+        }
+        else 
+        {
+            ray = Camera.main.ScreenPointToRay(Vector3.zero);
+        }
+        
+        if (toggleSphere)
         {
             if (Physics.Raycast(ray, out hit))
             {
@@ -39,18 +48,24 @@ public class SphericalFade : MonoBehaviour
                 transform.position = hit.point;
             }
         }
+    }
 
-        if (Input.GetMouseButtonDown(0))
+    public void ToggleSphere(InputAction.CallbackContext context)
+    {   
+        if (context.started)
         {
             StopAllCoroutines();
+            toggleSphere = true;
             StartCoroutine(GrowSphere(true));
         }
-        if (Input.GetMouseButtonUp(0))
+        if (context.performed)
         {
             StopAllCoroutines();
+            toggleSphere = false;
             StartCoroutine(GrowSphere(false));
         }
 
+       
     }
 
     void OnDrawGizmosSelected()

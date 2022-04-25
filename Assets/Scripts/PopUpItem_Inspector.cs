@@ -37,6 +37,7 @@ public class PopUpItem_Inspector : Editor
         if (GUILayout.Button("Set Data"))
         {
             popUpItem.SetInfoPoint(JSONManager.GetInfoPoint(selectedRoom, selectedItem));
+            PrefabUtility.RecordPrefabInstancePropertyModifications(popUpItem);
         }
         
         

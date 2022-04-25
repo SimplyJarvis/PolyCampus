@@ -39,5 +39,6 @@ public class ItemRaiseOnHover : MonoBehaviour
             transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, newHeight, Time.deltaTime * 2f), transform.position.z);
             yield return null;
         }
+        transform.position = new Vector3(transform.position.x, newHeight, transform.position.z);
     }
 }
