@@ -23,9 +23,14 @@ public class CameraManager : MonoBehaviour
     Vector2 mouseStart;
     bool isMoving = false;
     Vector2 mouseValue;
-    Vector2 currentMousePos;
     Vector3 CameraPos = Vector3.zero;
     float scrollVal;
+
+    //Controls
+    InputAction c_toggleCameraMove;
+    InputAction c_zoom;
+    InputAction c_mousePos; 
+    InputAction c_JoyStick;
 
     void Awake()
     {
@@ -36,14 +41,10 @@ public class CameraManager : MonoBehaviour
         zoomLevel = MainCamera.orthographicSize;
     }
 
-    void OnDestroy()
-    {
-        GameManager.OnFloorChanged -= FloorChange;
-    }
+
 
     void Update()
     {
-
         CameraPos = new Vector3(activeFloor.position.x + cameraOffset, Camera.main.transform.position.y, CameraPos.z);
 
         if (scrollVal != 0)
@@ -67,7 +68,7 @@ public class CameraManager : MonoBehaviour
         if (context.started)
         {
             isMoving = true;
-            mouseStart = currentMousePos;
+            mouseStart = CursorController.Instance.MousePositionScreen;
         }
         if (context.performed || context.canceled)
         {
@@ -81,10 +82,9 @@ public class CameraManager : MonoBehaviour
 
     public void MouseHandler(InputAction.CallbackContext context)
     {
-        currentMousePos = MainCamera.ScreenToViewportPoint(context.ReadValue<Vector2>()) - new Vector3(0.5f, 0.5f, 0);
         if (isMoving)
         {
-            mouseValue = (mouseStart - currentMousePos);
+            mouseValue = (mouseStart - CursorController.Instance.MousePositionScreen);
         }
     }
 
@@ -128,5 +128,39 @@ public class CameraManager : MonoBehaviour
     {
         activeFloor = floorCamPos[num];
         cameraOffset = 0;
+    }
+
+    void OnEnable()
+    {
+        //Setup Inputs
+        c_toggleCameraMove = InputManager.Instance.inputActionMap.FindAction("ToggleCameraMove");
+        c_zoom = InputManager.Instance.inputActionMap.FindAction("Zoom");
+        c_mousePos = InputManager.Instance.inputActionMap.FindAction("MousePos");
+        c_JoyStick = InputManager.Instance.inputActionMap.FindAction("JS_Camera");
+
+        c_toggleCameraMove.started += ToggleMove;
+        c_toggleCameraMove.performed += ToggleMove;
+        c_zoom.performed += OnScroll;
+        c_zoom.canceled += OnScroll;
+        c_zoom.started += OnScroll;
+        c_mousePos.performed += MouseHandler;
+        c_JoyStick.started += JoyStickHandler;
+        c_JoyStick.canceled += JoyStickHandler;
+        c_JoyStick.performed += JoyStickHandler;
+    }
+
+    void OnDisable()
+    {
+        GameManager.OnFloorChanged -= FloorChange;
+
+        c_toggleCameraMove.started -= ToggleMove;
+        c_toggleCameraMove.performed -= ToggleMove;
+        c_zoom.performed -= OnScroll;
+        c_zoom.canceled -= OnScroll;
+        c_zoom.started -= OnScroll;
+        c_mousePos.performed -= MouseHandler;
+        c_JoyStick.started -= JoyStickHandler;
+        c_JoyStick.canceled -= JoyStickHandler;
+        c_JoyStick.performed -= JoyStickHandler;
     }
 }

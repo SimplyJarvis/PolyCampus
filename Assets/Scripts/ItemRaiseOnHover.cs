@@ -5,40 +5,44 @@ using UnityEngine;
 public class ItemRaiseOnHover : MonoBehaviour
 {
     [SerializeField]
-    float raiseHeight = 0.2f;
+    float amplitude = 0.2f;
     Vector3 startPos;
+    [SerializeField]
+    float speed = 1f;
+    [SerializeField]
+    bool isFloating = false;
 
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
+        StartCoroutine(MovePopUp());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void OnMouseEnter()
+    void OnBecameVisible()
     {
         StopAllCoroutines();
-        StartCoroutine(MovePopUp(startPos.y + raiseHeight));
+        StartCoroutine(MovePopUp());
     }
 
-    void OnMouseExit()
+    void OnBecameInvisible()
     {
-        StopAllCoroutines();
-        StartCoroutine(MovePopUp(startPos.y));
+        isFloating = false;
     }
 
-    IEnumerator MovePopUp(float newHeight)
+    IEnumerator MovePopUp()
     {
-        while (Mathf.Abs(transform.position.y - newHeight) > 0.01f)
+        isFloating = true;
+        float elapsedTime = Random.Range(0f, 1f);
+        while (isFloating)
         {
-            transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, newHeight, Time.deltaTime * 2f), transform.position.z);
+            float y = amplitude * (Mathf.Sin((speed * elapsedTime)) + 1 );
+            transform.position = new Vector3(transform.position.x, y, transform.position.z);
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
-        transform.position = new Vector3(transform.position.x, newHeight, transform.position.z);
+        transform.position = new Vector3(transform.position.x, startPos.y, transform.position.z);
+        
+
     }
 }

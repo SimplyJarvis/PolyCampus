@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PopUpItem : MonoBehaviour
+public class PopUpItem : MonoBehaviour 
 {
 
     public infoPoint itemInfo;
@@ -44,10 +44,10 @@ public class PopUpItem : MonoBehaviour
         
     }
 
-    void OnMouseDown()
-    {
-        UIManager.Instance.ActivateInfoPopUp(itemInfo.itemName, itemInfo.itemDesc);
-    }
+    public void Activate ()
+     {
+         UIManager.Instance.ActivateInfoPopUp(itemInfo.itemName, itemInfo.itemDesc);
+     }
 
     IEnumerator ScaleUp()
     {

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static event Action<int> OnFloorChanged;
     [SerializeField]
     int Floor = 0;
+    InputAction c_FloorChange;
    
     private void Awake()
     {
@@ -20,6 +22,9 @@ public class GameManager : MonoBehaviour
         } else {
             _instance = this;
         }
+
+        c_FloorChange = InputManager.Instance.inputActionMap.FindAction("FloorChange");
+        c_FloorChange.performed += C_switchLevel;
     }
 
 
@@ -46,6 +51,16 @@ public class GameManager : MonoBehaviour
     public void t_switchLevel()
     {
         UpdateLevel(Floor == 0 ?  1 : 0);
+    }
+
+    private void C_switchLevel(InputAction.CallbackContext context)
+    {
+        t_switchLevel();
+    }
+
+    private void OnDisable()
+    {
+        c_FloorChange.performed -= C_switchLevel;
     }
 }
 

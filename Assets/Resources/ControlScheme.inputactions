@@ -34,7 +34,7 @@
                 },
                 {
                     "name": "SphericalFade",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "19a5da85-8054-45f2-ab83-41647f69dc0e",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -42,13 +42,31 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "CameraMove",
+                    "name": "JS_Camera",
                     "type": "Value",
                     "id": "90e88430-dd8d-4ffe-a727-a8b3aa5e75b9",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ActivateObject",
+                    "type": "Button",
+                    "id": "45df3095-0b29-4d50-bae2-f2df91aff217",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FloorChange",
+                    "type": "Button",
+                    "id": "dbbb0868-31db-429a-ae3a-f857aa3b7a3e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -111,7 +129,7 @@
                     "name": "",
                     "id": "a216b751-11d3-48a7-b15e-8cc6c3dc6cae",
                     "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "GamePad",
                     "action": "SphericalFade",
@@ -123,9 +141,42 @@
                     "id": "5ca55593-f44b-43b4-a2aa-cbde4ede5b1a",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "StickDeadzone,InvertVector2,ScaleVector2(x=0.8,y=0.8)",
+                    "processors": "InvertVector2,ScaleVector2(x=0.8,y=0.8),StickDeadzone",
                     "groups": "GamePad",
-                    "action": "CameraMove",
+                    "action": "JS_Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6d34b1d7-0d27-4b8f-97e5-b7bc9379831e",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "MainControls",
+                    "action": "ActivateObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dbd7b202-4d4b-40b8-b36a-150c2d91fcc1",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "ActivateObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "06c1577c-8dfc-4819-b1f9-e3afb2749f1e",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "FloorChange",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -139,11 +190,6 @@
             "devices": [
                 {
                     "devicePath": "<Mouse>",
-                    "isOptional": false,
-                    "isOR": false
-                },
-                {
-                    "devicePath": "<XInputController>",
                     "isOptional": false,
                     "isOR": false
                 }
