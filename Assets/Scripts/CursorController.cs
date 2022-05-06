@@ -64,16 +64,16 @@ public class CursorController : MonoBehaviour
         {
             ray = Camera.main.ScreenPointToRay(new Vector3 (Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
         }
-
         Physics.Raycast(ray, out rayHit);
     }
 
     private void ActivateObject(InputAction.CallbackContext context)
     {
         //Debug.Log("hello");
-        if (rayHit.collider.GetComponent<PopUpItem>())
+        if (rayHit.collider)
+        if (rayHit.collider.GetComponent<Item_Info>())
         {
-            rayHit.collider.GetComponent<PopUpItem>().Activate();
+            rayHit.collider.GetComponent<Item_Info>().Activate();
         }
     }
 

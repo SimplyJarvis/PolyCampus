@@ -55,7 +55,7 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SphericalFade"",
+                    ""name"": ""ToggleSphereFade"",
                     ""type"": ""Button"",
                     ""id"": ""19a5da85-8054-45f2-ab83-41647f69dc0e"",
                     ""expectedControlType"": ""Button"",
@@ -89,6 +89,15 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AnalogueSphereFade"",
+                    ""type"": ""Value"",
+                    ""id"": ""f2599741-6258-4a9d-8df0-346aa5f59b62"",
+                    ""expectedControlType"": ""Analog"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -143,18 +152,7 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": ""MainControls"",
-                    ""action"": ""SphericalFade"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a216b751-11d3-48a7-b15e-8cc6c3dc6cae"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": ""Press(behavior=1)"",
-                    ""processors"": """",
-                    ""groups"": ""GamePad"",
-                    ""action"": ""SphericalFade"",
+                    ""action"": ""ToggleSphereFade"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -201,6 +199,17 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                     ""action"": ""FloorChange"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""421680e8-f57a-49cf-881f-f225aad9f0c2"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""AnalogueSphereFade"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -235,10 +244,11 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
         m_Main_MousePos = m_Main.FindAction("MousePos", throwIfNotFound: true);
         m_Main_Zoom = m_Main.FindAction("Zoom", throwIfNotFound: true);
         m_Main_ToggleCameraMove = m_Main.FindAction("ToggleCameraMove", throwIfNotFound: true);
-        m_Main_SphericalFade = m_Main.FindAction("SphericalFade", throwIfNotFound: true);
+        m_Main_ToggleSphereFade = m_Main.FindAction("ToggleSphereFade", throwIfNotFound: true);
         m_Main_JS_Camera = m_Main.FindAction("JS_Camera", throwIfNotFound: true);
         m_Main_ActivateObject = m_Main.FindAction("ActivateObject", throwIfNotFound: true);
         m_Main_FloorChange = m_Main.FindAction("FloorChange", throwIfNotFound: true);
+        m_Main_AnalogueSphereFade = m_Main.FindAction("AnalogueSphereFade", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -301,10 +311,11 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_MousePos;
     private readonly InputAction m_Main_Zoom;
     private readonly InputAction m_Main_ToggleCameraMove;
-    private readonly InputAction m_Main_SphericalFade;
+    private readonly InputAction m_Main_ToggleSphereFade;
     private readonly InputAction m_Main_JS_Camera;
     private readonly InputAction m_Main_ActivateObject;
     private readonly InputAction m_Main_FloorChange;
+    private readonly InputAction m_Main_AnalogueSphereFade;
     public struct MainActions
     {
         private @ControlScheme m_Wrapper;
@@ -312,10 +323,11 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
         public InputAction @MousePos => m_Wrapper.m_Main_MousePos;
         public InputAction @Zoom => m_Wrapper.m_Main_Zoom;
         public InputAction @ToggleCameraMove => m_Wrapper.m_Main_ToggleCameraMove;
-        public InputAction @SphericalFade => m_Wrapper.m_Main_SphericalFade;
+        public InputAction @ToggleSphereFade => m_Wrapper.m_Main_ToggleSphereFade;
         public InputAction @JS_Camera => m_Wrapper.m_Main_JS_Camera;
         public InputAction @ActivateObject => m_Wrapper.m_Main_ActivateObject;
         public InputAction @FloorChange => m_Wrapper.m_Main_FloorChange;
+        public InputAction @AnalogueSphereFade => m_Wrapper.m_Main_AnalogueSphereFade;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -334,9 +346,9 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                 @ToggleCameraMove.started -= m_Wrapper.m_MainActionsCallbackInterface.OnToggleCameraMove;
                 @ToggleCameraMove.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnToggleCameraMove;
                 @ToggleCameraMove.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnToggleCameraMove;
-                @SphericalFade.started -= m_Wrapper.m_MainActionsCallbackInterface.OnSphericalFade;
-                @SphericalFade.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnSphericalFade;
-                @SphericalFade.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnSphericalFade;
+                @ToggleSphereFade.started -= m_Wrapper.m_MainActionsCallbackInterface.OnToggleSphereFade;
+                @ToggleSphereFade.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnToggleSphereFade;
+                @ToggleSphereFade.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnToggleSphereFade;
                 @JS_Camera.started -= m_Wrapper.m_MainActionsCallbackInterface.OnJS_Camera;
                 @JS_Camera.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnJS_Camera;
                 @JS_Camera.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnJS_Camera;
@@ -346,6 +358,9 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                 @FloorChange.started -= m_Wrapper.m_MainActionsCallbackInterface.OnFloorChange;
                 @FloorChange.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnFloorChange;
                 @FloorChange.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnFloorChange;
+                @AnalogueSphereFade.started -= m_Wrapper.m_MainActionsCallbackInterface.OnAnalogueSphereFade;
+                @AnalogueSphereFade.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnAnalogueSphereFade;
+                @AnalogueSphereFade.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnAnalogueSphereFade;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
@@ -359,9 +374,9 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                 @ToggleCameraMove.started += instance.OnToggleCameraMove;
                 @ToggleCameraMove.performed += instance.OnToggleCameraMove;
                 @ToggleCameraMove.canceled += instance.OnToggleCameraMove;
-                @SphericalFade.started += instance.OnSphericalFade;
-                @SphericalFade.performed += instance.OnSphericalFade;
-                @SphericalFade.canceled += instance.OnSphericalFade;
+                @ToggleSphereFade.started += instance.OnToggleSphereFade;
+                @ToggleSphereFade.performed += instance.OnToggleSphereFade;
+                @ToggleSphereFade.canceled += instance.OnToggleSphereFade;
                 @JS_Camera.started += instance.OnJS_Camera;
                 @JS_Camera.performed += instance.OnJS_Camera;
                 @JS_Camera.canceled += instance.OnJS_Camera;
@@ -371,6 +386,9 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                 @FloorChange.started += instance.OnFloorChange;
                 @FloorChange.performed += instance.OnFloorChange;
                 @FloorChange.canceled += instance.OnFloorChange;
+                @AnalogueSphereFade.started += instance.OnAnalogueSphereFade;
+                @AnalogueSphereFade.performed += instance.OnAnalogueSphereFade;
+                @AnalogueSphereFade.canceled += instance.OnAnalogueSphereFade;
             }
         }
     }
@@ -398,9 +416,10 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
         void OnMousePos(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
         void OnToggleCameraMove(InputAction.CallbackContext context);
-        void OnSphericalFade(InputAction.CallbackContext context);
+        void OnToggleSphereFade(InputAction.CallbackContext context);
         void OnJS_Camera(InputAction.CallbackContext context);
         void OnActivateObject(InputAction.CallbackContext context);
         void OnFloorChange(InputAction.CallbackContext context);
+        void OnAnalogueSphereFade(InputAction.CallbackContext context);
     }
 }

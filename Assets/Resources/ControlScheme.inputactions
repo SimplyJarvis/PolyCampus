@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SphericalFade",
+                    "name": "ToggleSphereFade",
                     "type": "Button",
                     "id": "19a5da85-8054-45f2-ab83-41647f69dc0e",
                     "expectedControlType": "Button",
@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "AnalogueSphereFade",
+                    "type": "Value",
+                    "id": "f2599741-6258-4a9d-8df0-346aa5f59b62",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -121,18 +130,7 @@
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "MainControls",
-                    "action": "SphericalFade",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a216b751-11d3-48a7-b15e-8cc6c3dc6cae",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "Press(behavior=1)",
-                    "processors": "",
-                    "groups": "GamePad",
-                    "action": "SphericalFade",
+                    "action": "ToggleSphereFade",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -177,6 +175,17 @@
                     "processors": "",
                     "groups": "GamePad",
                     "action": "FloorChange",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "421680e8-f57a-49cf-881f-f225aad9f0c2",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "AnalogueSphereFade",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
