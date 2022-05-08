@@ -7,15 +7,10 @@ using UnityEngine.InputSystem;
 public class CameraManager : MonoBehaviour
 {
 
-    [SerializeField]
-    Transform[] floorCamPos = new Transform[2];
-    [SerializeField]
-    [Range(1f, 5f)]
-    float cameraSpeed = 1f;
-    [SerializeField]
-    float scrollScale = 1f;
-    [SerializeField]
-    Vector2 cameraBoundPos;
+    [SerializeField] Transform[] floorCamPos = new Transform[2];
+    [SerializeField][Range(1f, 5f)] float cameraSpeed = 1f;
+    [SerializeField] float scrollScale = 1f;
+    [SerializeField] Vector2 cameraBoundPos;
     float zoomLevel;
     float cameraOffset = 1f;
     Camera MainCamera;
@@ -26,15 +21,8 @@ public class CameraManager : MonoBehaviour
     Vector3 CameraPos = Vector3.zero;
     float scrollVal;
 
-    //Controls
-    InputAction c_toggleCameraMove;
-    InputAction c_zoom;
-    InputAction c_mousePos; 
-    InputAction c_JoyStick;
-
     void Awake()
     {
-        GameManager.OnFloorChanged += FloorChange;
         MainCamera = Camera.main;
         CameraPos = Camera.main.transform.position;
         activeFloor = floorCamPos[0];
@@ -56,7 +44,7 @@ public class CameraManager : MonoBehaviour
                 if (zoomLevel < 9 || scrollVal > 0f)
                     cameraSpeed += Mathf.Clamp(scrollVal, -1, 1) / 2;
             }
-            
+
         }
 
         MainCamera.orthographicSize = Mathf.Lerp(MainCamera.orthographicSize, zoomLevel, Time.deltaTime * 3.5f);
@@ -75,9 +63,6 @@ public class CameraManager : MonoBehaviour
             isMoving = false;
             mouseValue = Vector2.zero;
         }
-
-
-
     }
 
     public void MouseHandler(InputAction.CallbackContext context)
@@ -132,35 +117,31 @@ public class CameraManager : MonoBehaviour
 
     void OnEnable()
     {
-        //Setup Inputs
-        c_toggleCameraMove = InputManager.Instance.inputActionMap.FindAction("ToggleCameraMove");
-        c_zoom = InputManager.Instance.inputActionMap.FindAction("Zoom");
-        c_mousePos = InputManager.Instance.inputActionMap.FindAction("MousePos");
-        c_JoyStick = InputManager.Instance.inputActionMap.FindAction("JS_Camera");
+        GameManager.OnFloorChanged += FloorChange;
 
-        c_toggleCameraMove.started += ToggleMove;
-        c_toggleCameraMove.performed += ToggleMove;
-        c_zoom.performed += OnScroll;
-        c_zoom.canceled += OnScroll;
-        c_zoom.started += OnScroll;
-        c_mousePos.performed += MouseHandler;
-        c_JoyStick.started += JoyStickHandler;
-        c_JoyStick.canceled += JoyStickHandler;
-        c_JoyStick.performed += JoyStickHandler;
+        InputManager.onToggleCameraMove.started += ToggleMove;
+        InputManager.onToggleCameraMove.performed += ToggleMove;
+        InputManager.onZoom.performed += OnScroll;
+        InputManager.onZoom.canceled += OnScroll;
+        InputManager.onZoom.started += OnScroll;
+        InputManager.onMouseMove.performed += MouseHandler;
+        InputManager.onJSMouseMove.started += JoyStickHandler;
+        InputManager.onJSMouseMove.canceled += JoyStickHandler;
+        InputManager.onJSMouseMove.performed += JoyStickHandler;
     }
 
     void OnDisable()
     {
         GameManager.OnFloorChanged -= FloorChange;
 
-        c_toggleCameraMove.started -= ToggleMove;
-        c_toggleCameraMove.performed -= ToggleMove;
-        c_zoom.performed -= OnScroll;
-        c_zoom.canceled -= OnScroll;
-        c_zoom.started -= OnScroll;
-        c_mousePos.performed -= MouseHandler;
-        c_JoyStick.started -= JoyStickHandler;
-        c_JoyStick.canceled -= JoyStickHandler;
-        c_JoyStick.performed -= JoyStickHandler;
+        InputManager.onToggleCameraMove.started -= ToggleMove;
+        InputManager.onToggleCameraMove.performed -= ToggleMove;
+        InputManager.onZoom.performed -= OnScroll;
+        InputManager.onZoom.canceled -= OnScroll;
+        InputManager.onZoom.started -= OnScroll;
+        InputManager.onMouseMove.performed -= MouseHandler;
+        InputManager.onJSMouseMove.started -= JoyStickHandler;
+        InputManager.onJSMouseMove.canceled -= JoyStickHandler;
+        InputManager.onJSMouseMove.performed -= JoyStickHandler;
     }
 }

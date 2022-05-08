@@ -148,7 +148,7 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""522ae264-76d5-4f84-ab4a-2dce8fa71d20"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Mouse>/middleButton"",
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": ""MainControls"",

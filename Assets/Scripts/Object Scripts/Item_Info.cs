@@ -47,6 +47,7 @@ public class Item_Info : MonoBehaviour
     public void Activate ()
      {
          UIManager.Instance.ActivateInfoPopUp(itemInfo.itemName, itemInfo.itemDesc);
+         SoundManager.Instance.interactSound();
      }
 
     IEnumerator ScaleUp()
