@@ -68,6 +68,23 @@ public class InputManager : MonoBehaviour
         onAnalogueSphere = inputActionMap.FindAction("AnalogueSphereFade");
     }
 
+    void OnEnable()
+    {
+        onActivate.started += HideTutorial;
+    }
+
+    void OnDisable()
+    {
+        onActivate.started -= HideTutorial;
+    }
+
+    void HideTutorial(InputAction.CallbackContext context)
+    {
+        if (GameManager.isTutorial)
+        {
+            GameManager.setTutorialEnabled(false);
+        }
+    }
 
 
 

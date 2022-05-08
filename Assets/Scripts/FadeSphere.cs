@@ -62,7 +62,7 @@ public class FadeSphere : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, fadeMaterial.GetFloat("_Radius"));
     }
 
-//This controls the growth of the sphere, isPlaced true = Grow, Wait for 2 seconds, Shrink. isPlaced False = Continus size using targetSphereRadius.
+    //This controls the growth of the sphere, isPlaced true = Grow, Wait for 2 seconds, Shrink. isPlaced False = Continus size using targetSphereRadius.
     IEnumerator PlaceGrowSphere(bool isPlaced)
     {
         bool isActive = true;
@@ -80,7 +80,6 @@ public class FadeSphere : MonoBehaviour
             if (Mathf.Abs(fadeMaterial.GetFloat("_Radius") - targetSphereRadius) < 0.1f && targetSphereRadius != 0f && isPlaced) //Wait once we reach the target size, then set the target back to 0 and carry on
             {
                 targetSphereRadius = 0f;
-                Debug.Log(Mathf.Abs(fadeMaterial.GetFloat("_Radius") - targetSphereRadius));
                 yield return new WaitForSeconds(2f);
             }
 
@@ -103,10 +102,6 @@ public class FadeSphere : MonoBehaviour
         transform.parent = transform.parent == null ? Camera.main.gameObject.transform : null;
     }
 
-    void TimedShrink() // Use this to delay invoke the shrink with mouse toggle
-    {
-        targetSphereRadius = 0;
-    }
 
 
     void OnEnable()

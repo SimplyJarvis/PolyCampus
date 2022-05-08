@@ -21,6 +21,15 @@
           "itemDesc": "blah"
         }
       ]
+    },
+    {
+      "roomName": "201",
+      "infoPoint": [
+        {
+          "itemName": "Lets Play!",
+          "itemDesc": "This arcade machine has a windows PC for students to develop and play their games on arcade hardware!"
+        }
+      ]
     }
   ]
 }

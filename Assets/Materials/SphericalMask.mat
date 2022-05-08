@@ -28,9 +28,9 @@ Material:
     - _MaxAlpha: 1
     - _Metallic: 0
     - _MinAlpha: 1
-    - _Radius: 0.0606367
+    - _Radius: 0
     - _Softness: 0.13
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Position: {r: 24.369194, g: 1.5, b: 26.963541, a: 0}
+    - _Position: {r: -54.399265, g: 1.4999962, b: -1.2207174, a: 0}
   m_BuildTextureStacks: []

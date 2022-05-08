@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,7 @@ public class CameraManager : MonoBehaviour
     Vector2 mouseValue;
     Vector3 CameraPos = Vector3.zero;
     float scrollVal;
+
 
     void Awake()
     {
@@ -46,6 +48,8 @@ public class CameraManager : MonoBehaviour
             }
 
         }
+
+    
 
         MainCamera.orthographicSize = Mathf.Lerp(MainCamera.orthographicSize, zoomLevel, Time.deltaTime * 3.5f);
         MoveCamera();

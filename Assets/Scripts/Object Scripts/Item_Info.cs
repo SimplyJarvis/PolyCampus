@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Item_Info : MonoBehaviour 
 {
 
     public infoPoint itemInfo;
-    [SerializeField]
-    float spriteSize;
-    [SerializeField]
-    GameObject playerCamera;
-    [SerializeField]
-    Vector3 initRotation;
-    [SerializeField]
-    bool isUI = true;
+    [SerializeField] float spriteSize;
+    [SerializeField] GameObject playerCamera;
+    [SerializeField] Vector3 initRotation;
+    [SerializeField] bool isUI = false;
+    AudioSource customSound;
 
     // Start is called before the first frame update
     void Start()
     {
+        customSound = GetComponent<AudioSource>() ? GetComponent<AudioSource>() : null;
         if (isUI)
         {
             transform.rotation = Quaternion.Euler(initRotation);
@@ -39,6 +38,7 @@ public class Item_Info : MonoBehaviour
     {
         if (isUI)
         {
+            if (this.isActiveAndEnabled)
             StartCoroutine(ScaleDown());
         }
         
@@ -47,7 +47,15 @@ public class Item_Info : MonoBehaviour
     public void Activate ()
      {
          UIManager.Instance.ActivateInfoPopUp(itemInfo.itemName, itemInfo.itemDesc);
-         SoundManager.Instance.interactSound();
+         if (customSound)
+         {
+             customSound.Play();
+         }
+         else 
+         {
+             SoundManager.Instance.interactSound();
+         }
+         
      }
 
     IEnumerator ScaleUp()

@@ -8,18 +8,24 @@ public class GameManager : MonoBehaviour
 {
 
     private static GameManager _instance;
-    public static GameManager Instance {get {return _instance;}}
+    public static GameManager Instance { get { return _instance; } }
     public static event Action<int> OnFloorChanged;
+    public static event Action<bool> OnTutorialToggle;
     [SerializeField]
     int Floor = 0;
     InputAction c_FloorChange;
-   
+    [SerializeField] GameObject firstFloor;
+    [SerializeField] GameObject secondFloor;
+    public static bool isTutorial;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
-        } else {
+        }
+        else
+        {
             _instance = this;
         }
 
@@ -28,19 +34,35 @@ public class GameManager : MonoBehaviour
     }
 
 
-   public void UpdateLevel(int level){
+    public void UpdateLevel(int level)
+    {
         Floor = level;
-
-        switch(Floor){
-            case 0:
-            break;
-            case 1:
-            break;
-            default:
-            break;
-        }
+        Invoke("HideFloor", 0.2f);
 
         OnFloorChanged?.Invoke(Floor);
+    }
+
+    void HideFloor()
+    {
+        switch (Floor)
+        {
+            case 0:
+                firstFloor.SetActive(true);
+                secondFloor.SetActive(false);
+                break;
+            case 1:
+                firstFloor.SetActive(false);
+                secondFloor.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public static void setTutorialEnabled(bool tutorial)
+    {
+        isTutorial = tutorial;
+        OnTutorialToggle?.Invoke(isTutorial);
     }
 
     public int GetLevel()
@@ -50,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void t_switchLevel()
     {
-        UpdateLevel(Floor == 0 ?  1 : 0);
+        UpdateLevel(Floor == 0 ? 1 : 0);
     }
 
     private void C_switchLevel(InputAction.CallbackContext context)
