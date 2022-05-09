@@ -74,9 +74,9 @@ public class CursorController : MonoBehaviour
     {
         if (InputManager.Instance.isSphereActive)
         {
-            if (rayHitInteractable.collider && rayHitInteractable.collider.GetComponent<Item_Info>()) //If clicked on an interactiable object
+            if (rayHitInteractable.collider && rayHitInteractable.collider.GetComponent<Item_Interactable>()) //If clicked on an interactiable object
             {
-                rayHitInteractable.collider.GetComponent<Item_Info>().Activate();
+                rayHitInteractable.collider.GetComponent<Item_Interactable>().Triggered();
                 OnItemClicked?.Invoke(rayHitInteractable.point);
             }
             else // If just clicked on something with a collider
@@ -87,9 +87,9 @@ public class CursorController : MonoBehaviour
         }
         else if (rayHit.collider)
         {
-            if (rayHit.collider.GetComponent<Item_Info>()) //If clicked on an interactiable object
+            if (rayHit.collider.GetComponent<Item_Interactable>()) //If clicked on an interactiable object
             {
-                rayHit.collider.GetComponent<Item_Info>().Activate();
+                rayHit.collider.GetComponent<Item_Interactable>().Triggered();
                 OnItemClicked?.Invoke(rayHit.point);
             }
             else // If just clicked on something with a collider

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[RequireComponent (typeof(Item_Interactable))]
 public class Item_Info : MonoBehaviour 
 {
 
@@ -86,5 +86,15 @@ public class Item_Info : MonoBehaviour
     {
         itemInfo = data;
         Debug.Log("Data Set");
+    }
+
+    void OnEnable()
+    {
+        GetComponent<Item_Interactable>().onTrigger += Activate;
+    }
+
+    void OnDisable()
+    {
+        GetComponent<Item_Interactable>().onTrigger -= Activate;
     }
 }
