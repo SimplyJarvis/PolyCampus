@@ -20,9 +20,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] RectTransform canvas;
     [SerializeField] TMP_Text floorText;
     Vector3 hidePosition;
+    [SerializeField] GameObject CrossHair;
     [SerializeField] TMP_Text t_Interact;
     [SerializeField] TMP_Text t_Camera;
-    [SerializeField] TMP_Text t_Zoom;
     [SerializeField] TMP_Text t_Sphere;
     [SerializeField] GameObject tutorialGroup;
 
@@ -112,13 +112,18 @@ public class UIManager : MonoBehaviour
             t_Sphere.SetText("Click the mouse wheel to see through walls");
             t_Camera.SetText("Right click moves the camera around, you can also zoom in with the scroll wheel");
             t_Interact.SetText("Left click on certain objects to bring up more info");
+            CrossHair.SetActive(false);
         }
         else
         {
             t_Sphere.SetText("Use Left Trigger to see through walls");
             t_Camera.SetText("Left Stick moves the camera, while the Right Stick zooms in or out");
             t_Interact.SetText("Right Trigger while looking at certain items will bring up more info");
+            CrossHair.SetActive(true);
         }
+
+
+
     }
 
     public void ToggleTutorial(bool isEnabled)

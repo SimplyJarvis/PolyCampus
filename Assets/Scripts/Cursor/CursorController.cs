@@ -10,6 +10,8 @@ public class CursorController : MonoBehaviour
     public static CursorController Instance { get { return instance; } }
     private Vector2 screenMousePos;
     public Vector2 MousePositionScreen { get { return screenMousePos; } } // Used for Camera movement
+    private Vector2 screenMousePosRaw;
+    public Vector2 MousePositionScreenRaw { get { return screenMousePosRaw; } } // Used for Camera movement
     private bool isMouse = true;
     public RaycastHit MouseRayHit { get { return rayHit; } }
     public static event Action<Vector3> OnItemClicked; //Clicked on valid interactable object
@@ -40,6 +42,7 @@ public class CursorController : MonoBehaviour
         if (isMouse)
         {
             screenMousePos = Camera.main.ScreenToViewportPoint(context.ReadValue<Vector2>()) - new Vector3(0.5f, 0.5f, 0);
+            screenMousePosRaw = RatioMousePos(Mouse.current.position.ReadValue());
             MouseRayCast();
         }
     }
@@ -67,7 +70,7 @@ public class CursorController : MonoBehaviour
             Physics.Raycast(ray, out rayHitInteractable, Mathf.Infinity, interactableLayer);
         }
         Physics.Raycast(ray, out rayHit);
-        
+
     }
 
     private void ActivateObject(InputAction.CallbackContext context)
@@ -111,6 +114,18 @@ public class CursorController : MonoBehaviour
         {
             isMouse = true;
         }
+    }
+
+    Vector2 RatioMousePos(Vector2 pos)
+    {
+        float mouseRatioX = pos.x / Screen.width;
+        float mouseRatioY = pos.y / Screen.height;
+
+        float screenPosX = mouseRatioX * Screen.width;
+        float screenPosY = mouseRatioY * Screen.height;
+        
+        
+        return new Vector2(screenPosX, screenPosY);
     }
 
     void OnEnable()

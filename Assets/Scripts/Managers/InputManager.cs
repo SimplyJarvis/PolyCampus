@@ -47,6 +47,11 @@ public class InputManager : MonoBehaviour
         AssignControls();
     }
 
+    void Start()
+    {
+        ControlChange(ControlInput);
+    }
+
     public void SetSphere(bool isActive)
     {
         _isSphereActive = isActive;
