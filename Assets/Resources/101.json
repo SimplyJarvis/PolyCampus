@@ -1,24 +1,101 @@
 {
   "room": [
     {
-      "roomName": "101",
+      "roomName": "100",
       "infoPoint": [
         {
-          "itemName": "HPC",
-          "itemDesc": "The High Performance Computing cluster is located next to SMB 109, its used for research across the university"
-        },
-        {
-          "itemName": "test2",
-          "itemDesc": "blah"
+          "itemName": "Projector Screen",
+          "itemDesc": "What mysteries are projected onto it?? We'll never know"
         }
       ]
     },
     {
-      "roomName": "102",
+      "roomName": "101",
       "infoPoint": [
         {
-          "itemName": "test",
-          "itemDesc": "blah"
+          "itemName": "Cyber Lab",
+          "itemDesc": "This specialist lab is equiped for ethical hacking! A custom private network and VMs allows students to learn about Virus' and Malware"
+        },
+        {
+          "itemName": "Server Room",
+          "itemDesc": "A fully custom network supports the cyber lab, we host numerous Virtual Machines for students to attempt to hack and break!"
+        },
+        {
+          "itemName": "A Cake",
+          "itemDesc": "Not really a safe place to store a cake"
+        }
+      ]
+    },
+    {
+      "roomName": "109",
+      "infoPoint": [
+        {
+          "itemName": "Web Technologies Lab",
+          "itemDesc": "This lab contains smart home tech, students can directly interact and manipulate kit through multiple APIs"
+        },
+        {
+          "itemName": "HPC",
+          "itemDesc": "The High Performance Computing kit powers research across the University."
+        }
+      ]
+    },
+    {
+      "roomName": "General",
+      "infoPoint": [
+        {
+          "itemName": "General Computing",
+          "itemDesc": "This is a general computing lab, focused on multiple work flows to create and adaptable work space for students from multiple pathways."
+        },
+        {
+          "itemName": "Lecture Room",
+          "itemDesc": "This room is used for delievring content in a more traditional lecture style"
+        },
+        {
+          "itemName": "Mysterious Server",
+          "itemDesc": "I wonder what it does..."
+        }
+      ]
+    },
+    {
+      "roomName": "106",
+      "infoPoint": [
+        {
+          "itemName": "Technicians Office",
+          "itemDesc": "The Computing Technical Team is based from this office, specializing within multiple areas within computing, the team provides direct support to students while also supporting teaching/research and much more!"
+        },
+        {
+          "itemName": "Games Console",
+          "itemDesc": "Hmm... We'll assume that's used for research"
+        },
+        {
+          "itemName": "Plant",
+          "itemDesc": "One day we'll remember to water it correctly..."
+        },
+        {
+          "itemName": "Desk",
+          "itemDesc": "I wonder who sits here..."
+        }
+      ]
+    },
+    {
+      "roomName": "105",
+      "infoPoint": [
+        {
+          "itemName": "Engineering Lab",
+          "itemDesc": "This lab is Engineering focused with specialist software... Unfortunatly this was written by someone from Computing, so I don't know much else about it."
+        }
+      ]
+    },
+    {
+      "roomName": "200",
+      "infoPoint": [
+        {
+          "itemName": "Giant TV",
+          "itemDesc": "This is an 87\" 4K TV!! There's also two of them! Perfect for games ;)"
+        },
+        {
+          "itemName": "Cross Platform Lab",
+          "itemDesc": "This lab contains both MacOS devices and Windows devices, this allows testing across multiple platforms. The iMacs are also great for UI and UX work due to the high resolution, colour accurate displays."
         }
       ]
     },
@@ -28,6 +105,43 @@
         {
           "itemName": "Lets Play!",
           "itemDesc": "This arcade machine has a windows PC for students to develop and play their games on arcade hardware!"
+        },
+        {
+          "itemName": "Some Donuts",
+          "itemDesc": "Shouldn't really have food in here... although they do look good..."
+        },
+        {
+          "itemName": "Energy Drink",
+          "itemDesc": "Should have gone to bed earlier..."
+        },
+        {
+          "itemName": "Games Development Lab",
+          "itemDesc": "Higher Spec PCs are available to push those graphical limits! Machine learning and CUDA programming is also another use I suppose..."
+        }
+      ]
+    },
+    {
+      "roomName": "204",
+      "infoPoint": [
+        {
+          "itemName": "VR Lab",
+          "itemDesc": "Two dedicated VR spaces with green screen walls create an adaptable environment for VR/AR/XR workflows. There is also a dedicated space for Team working which is bookable by students."
+        },
+        {
+          "itemName": "Green Screens",
+          "itemDesc": "The real ones are even bigger than this! We have this setup to allow for mixed reality capture for students to show off their work!"
+        },
+        {
+          "itemName": "High Spec PCs",
+          "itemDesc": "VR games require more powerful GPUs, and we always want to be able to run the latest VR games!"
+        },
+        {
+          "itemName": "Neon Cactus",
+          "itemDesc": "Ooh that looks cool."
+        },
+        {
+          "itemName": "VHS Tape",
+          "itemDesc": "Don't watch these, what if its like The Ring?"
         }
       ]
     }

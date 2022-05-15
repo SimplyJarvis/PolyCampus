@@ -17,11 +17,13 @@ public class CursorController : MonoBehaviour
     public static event Action<Vector3> OnItemClicked; //Clicked on valid interactable object
     public static event Action<Vector3> OnClickHit; //Clicked on other objects
     private int interactableLayer;
+    private Collider previousItemHover; //Needed for controller
 
     //Raycast Stuff
     Ray ray;
     RaycastHit rayHit;
-    RaycastHit rayHitInteractable;
+    
+    RaycastHit rayHitHover;
 
     void Awake()
     {
@@ -52,6 +54,11 @@ public class CursorController : MonoBehaviour
         if (!isMouse)
         {
             MouseRayCast(); //As the camera is smoothed, it can continue moving after player input, this allows the sphere to continue moving with the camera after player input stops
+            if (previousItemHover != rayHitHover.collider) //This is baiscally an onMouseEnter handler for Controllers
+            {
+                rayHitHover.collider?.GetComponent<Item_Interactable>()?.OnControllerEnter();
+            }
+            previousItemHover = rayHitHover.collider;
         }
     }
 
@@ -65,43 +72,54 @@ public class CursorController : MonoBehaviour
         {
             ray = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
         }
-        if (InputManager.Instance.isSphereActive)
-        {
-            Physics.Raycast(ray, out rayHitInteractable, Mathf.Infinity, interactableLayer);
-        }
-        Physics.Raycast(ray, out rayHit);
 
+        
+        
+        Physics.Raycast(ray, out rayHitHover, Mathf.Infinity, interactableLayer);
+
+    }
+
+    public Vector3 MouseRayPos()
+    {
+        RaycastHit raySphere; //Quick Fix, sort out later
+        Physics.Raycast(ray, out raySphere);
+        return raySphere.point;
     }
 
     private void ActivateObject(InputAction.CallbackContext context)
     {
         if (InputManager.Instance.isSphereActive)
         {
-            if (rayHitInteractable.collider && rayHitInteractable.collider.GetComponent<Item_Interactable>()) //If clicked on an interactiable object
+            Physics.Raycast(ray, out rayHit, Mathf.Infinity, interactableLayer);
+            if (!rayHit.collider?.GetComponent<Item_Interactable>())
             {
-                rayHitInteractable.collider.GetComponent<Item_Interactable>().Triggered();
-                OnItemClicked?.Invoke(rayHitInteractable.point);
-            }
-            else // If just clicked on something with a collider
-            {
-                OnClickHit?.Invoke(rayHit.point);
-                SoundManager.Instance.missSound();
+                Physics.Raycast(ray, out rayHit);
             }
         }
-        else if (rayHit.collider)
+        
+        
+
+        if (!InputManager.Instance.isSphereActive)
         {
-            if (rayHit.collider.GetComponent<Item_Interactable>()) //If clicked on an interactiable object
-            {
-                rayHit.collider.GetComponent<Item_Interactable>().Triggered();
-                OnItemClicked?.Invoke(rayHit.point);
-            }
-            else // If just clicked on something with a collider
-            {
-                OnClickHit?.Invoke(rayHit.point);
-                SoundManager.Instance.missSound();
-            }
+            Physics.Raycast(ray, out rayHit);
         }
+
+        Item_Interactable objectInteract = rayHit.collider?.GetComponent<Item_Interactable>();
+
+        if (objectInteract && !objectInteract.isHover)
+        {
+            rayHit.collider.GetComponent<Item_Interactable>().Triggered(rayHit.point);
+            OnItemClicked?.Invoke(rayHit.point);
+        }
+        else if (rayHit.collider) // If just clicked on something with a collider
+        {
+            OnClickHit?.Invoke(rayHit.point);
+            SoundManager.Instance.missSound();
+        }
+
+        
     }
+
 
     void HandleControlChange(PlayerInput input)
     {
@@ -123,8 +141,8 @@ public class CursorController : MonoBehaviour
 
         float screenPosX = mouseRatioX * Screen.width;
         float screenPosY = mouseRatioY * Screen.height;
-        
-        
+
+
         return new Vector2(screenPosX, screenPosY);
     }
 

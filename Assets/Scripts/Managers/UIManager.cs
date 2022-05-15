@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text t_Camera;
     [SerializeField] TMP_Text t_Sphere;
     [SerializeField] GameObject tutorialGroup;
+    [SerializeField] RoomName_UI RN_UI;
 
     private void Awake()
     {
@@ -130,6 +131,14 @@ public class UIManager : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(FadeUI(tutorialGroup));
+    }
+
+    public void RoomNameDisplay(string name)
+    {
+        if (RN_UI.GetCurrentName() != name)
+        {
+            RN_UI.Display(name);
+        }
     }
 
     IEnumerator FadeUI(GameObject ui)

@@ -92,7 +92,8 @@ public class FadeSphere : MonoBehaviour
 
     void SetPosition()
     {
-        transform.position = new Vector3(CursorController.Instance.MouseRayHit.point.x, 1.5f, CursorController.Instance.MouseRayHit.point.z);
+        Vector3 MouseWorldPos = CursorController.Instance.MouseRayPos();
+        transform.position = new Vector3(MouseWorldPos.x, 1.5f, MouseWorldPos.z);
         fadeMaterial.SetVector("_Position", transform.position);
         glassFadeMaterial.SetVector("_Position", transform.position);
     }
