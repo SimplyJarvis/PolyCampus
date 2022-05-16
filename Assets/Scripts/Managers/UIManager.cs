@@ -93,14 +93,12 @@ public class UIManager : MonoBehaviour
 
     void OnEnable()
     {
-        GameManager.OnFloorChanged += FloorUI;
         InputManager.onControlsChanged += setInputTutorials;
         GameManager.OnTutorialToggle += ToggleTutorial;
     }
 
     void OnDisable()
     {
-        GameManager.OnFloorChanged -= FloorUI;
         InputManager.onControlsChanged -= setInputTutorials;
         GameManager.OnTutorialToggle -= ToggleTutorial;
     }

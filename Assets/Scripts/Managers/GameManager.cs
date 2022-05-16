@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject firstFloor;
     [SerializeField] GameObject secondFloor;
     public static bool isTutorial;
+    float idleTimer;
 
     private void Awake()
     {
@@ -31,6 +32,9 @@ public class GameManager : MonoBehaviour
 
         c_FloorChange = InputManager.Instance.inputActionMap.FindAction("FloorChange");
         c_FloorChange.performed += C_switchLevel;
+        InputManager.onMouseMove.started += ResetIdle;
+        InputManager.onJSMouseMove.started += ResetIdle;
+        InputManager.onActivate.started += ResetIdle;
     }
 
 
@@ -80,9 +84,30 @@ public class GameManager : MonoBehaviour
         t_switchLevel();
     }
 
+    private void ResetIdle(InputAction.CallbackContext context)
+    {
+        idleTimer = 0f;
+    }
+
+    void Update()
+    {
+        if (!isTutorial)
+        {
+            idleTimer += Time.deltaTime;
+            if (idleTimer > 30f)
+            {
+                setTutorialEnabled(true);
+            }
+        }
+        
+    }
+
     private void OnDisable()
     {
         c_FloorChange.performed -= C_switchLevel;
+        InputManager.onMouseMove.started -= ResetIdle;
+        InputManager.onJSMouseMove.started -= ResetIdle;
+        InputManager.onActivate.started -= ResetIdle;
     }
 }
 

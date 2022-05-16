@@ -98,6 +98,15 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Secondary"",
+                    ""type"": ""Button"",
+                    ""id"": ""45e5c504-d84f-4ac6-8af7-9e6ae18a8389"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -210,6 +219,28 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                     ""action"": ""AnalogueSphereFade"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""67eb39df-34f0-4f63-810c-65cb8390aea7"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Secondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1d1c48ed-b2d8-4ecb-a208-95d39ef0fe52"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MainControls"",
+                    ""action"": ""Secondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -249,6 +280,7 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
         m_Main_ActivateObject = m_Main.FindAction("ActivateObject", throwIfNotFound: true);
         m_Main_FloorChange = m_Main.FindAction("FloorChange", throwIfNotFound: true);
         m_Main_AnalogueSphereFade = m_Main.FindAction("AnalogueSphereFade", throwIfNotFound: true);
+        m_Main_Secondary = m_Main.FindAction("Secondary", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -316,6 +348,7 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_ActivateObject;
     private readonly InputAction m_Main_FloorChange;
     private readonly InputAction m_Main_AnalogueSphereFade;
+    private readonly InputAction m_Main_Secondary;
     public struct MainActions
     {
         private @ControlScheme m_Wrapper;
@@ -328,6 +361,7 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
         public InputAction @ActivateObject => m_Wrapper.m_Main_ActivateObject;
         public InputAction @FloorChange => m_Wrapper.m_Main_FloorChange;
         public InputAction @AnalogueSphereFade => m_Wrapper.m_Main_AnalogueSphereFade;
+        public InputAction @Secondary => m_Wrapper.m_Main_Secondary;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -361,6 +395,9 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                 @AnalogueSphereFade.started -= m_Wrapper.m_MainActionsCallbackInterface.OnAnalogueSphereFade;
                 @AnalogueSphereFade.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnAnalogueSphereFade;
                 @AnalogueSphereFade.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnAnalogueSphereFade;
+                @Secondary.started -= m_Wrapper.m_MainActionsCallbackInterface.OnSecondary;
+                @Secondary.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnSecondary;
+                @Secondary.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnSecondary;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
@@ -389,6 +426,9 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                 @AnalogueSphereFade.started += instance.OnAnalogueSphereFade;
                 @AnalogueSphereFade.performed += instance.OnAnalogueSphereFade;
                 @AnalogueSphereFade.canceled += instance.OnAnalogueSphereFade;
+                @Secondary.started += instance.OnSecondary;
+                @Secondary.performed += instance.OnSecondary;
+                @Secondary.canceled += instance.OnSecondary;
             }
         }
     }
@@ -421,5 +461,6 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
         void OnActivateObject(InputAction.CallbackContext context);
         void OnFloorChange(InputAction.CallbackContext context);
         void OnAnalogueSphereFade(InputAction.CallbackContext context);
+        void OnSecondary(InputAction.CallbackContext context);
     }
 }

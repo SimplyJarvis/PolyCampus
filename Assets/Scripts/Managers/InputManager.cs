@@ -24,6 +24,7 @@ public class InputManager : MonoBehaviour
     public static InputAction onMouseMove; //Whenever the mouse is moved
     public static InputAction onJSMouseMove; //Joystick Camera move
     public static InputAction onActivate; //The main interaction (Object interaction)
+    public static InputAction onSecondary; //Secondary Input (Currently used for About UI)
     public static InputAction onToggleCameraMove; //Triggered when button for moving camera is pushed (mouse only)
     public static InputAction onZoom; //Zooming Camera In and Out
 
@@ -60,6 +61,16 @@ public class InputManager : MonoBehaviour
 
     void ControlChange(PlayerInput input)
     {
+        if (input.currentControlScheme == "GamePad")
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else 
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
         onControlsChanged?.Invoke(input);
     }
 
@@ -72,6 +83,7 @@ public class InputManager : MonoBehaviour
         onZoom = inputActionMap.FindAction("Zoom");
         onPlaceSphere = inputActionMap.FindAction("ToggleSphereFade");
         onAnalogueSphere = inputActionMap.FindAction("AnalogueSphereFade");
+        onSecondary = inputActionMap.FindAction("Secondary");
     }
 
     void OnEnable()
