@@ -147,7 +147,7 @@ public class UIManager : MonoBehaviour
             ui.SetActive(true);
             while (cg.alpha != 1)
             {
-                cg.alpha = Mathf.Lerp(cg.alpha, 1, Time.deltaTime * 0.8f);
+                cg.alpha = Mathf.Lerp(cg.alpha, 1, Time.deltaTime * 2.5f);
                 if (cg.alpha > 0.98f) cg.alpha = 1;
                 yield return null;
             }
@@ -156,8 +156,8 @@ public class UIManager : MonoBehaviour
         {
             while (cg.alpha != 0)
             {
-                cg.alpha = Mathf.Lerp(cg.alpha, 0, Time.deltaTime * 2f);
-                if (cg.alpha < 0.02f) cg.alpha = 0;
+                cg.alpha = Mathf.Lerp(cg.alpha, 0, Time.deltaTime * 2.5f);
+                if (cg.alpha < 0.09f) cg.alpha = 0;
                 yield return null;
             }
             ui.SetActive(false);

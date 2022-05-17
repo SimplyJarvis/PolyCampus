@@ -14,7 +14,7 @@
       "infoPoint": [
         {
           "itemName": "Cyber Lab",
-          "itemDesc": "This specialist lab is equiped for ethical hacking! A custom private network and VMs allows students to learn about Virus' and Malware"
+          "itemDesc": "This specialist lab is equipped for ethical hacking! A custom private network and VMs allows students to learn about Virus' and Malware"
         },
         {
           "itemName": "Server Room",
@@ -48,11 +48,15 @@
         },
         {
           "itemName": "Lecture Room",
-          "itemDesc": "This room is used for delievring content in a more traditional lecture style"
+          "itemDesc": "This room is used for delivering content in a more traditional lecture style"
         },
         {
           "itemName": "Mysterious Server",
           "itemDesc": "I wonder what it does..."
+        },
+        {
+          "itemName": "Unknown",
+          "itemDesc": "No one knows what this is..."
         }
       ]
     },
@@ -137,11 +141,11 @@
         },
         {
           "itemName": "Neon Cactus",
-          "itemDesc": "Ooh that looks cool."
+          "itemDesc": "Its a cactus"
         },
         {
           "itemName": "VHS Tape",
-          "itemDesc": "Don't watch these, what if its like The Ring?"
+          "itemDesc": "Who is still using these?"
         }
       ]
     }
