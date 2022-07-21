@@ -252,6 +252,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -358,7 +359,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f0d092816264d4f60800000000000000
-      internalID: 8020143640844766479
+      internalID: -5962389079421231736
       vertices: []
       indices: 
       edges: []
@@ -421,7 +422,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 88ddd6ce8b6514da0800000000000000
-      internalID: -5962389079421231736
+      internalID: 8020143640844766479
       vertices: []
       indices: 
       edges: []
@@ -505,7 +506,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 19eb3748437987590800000000000000
-      internalID: -7676219313036738927
+      internalID: -2630129836624287915
       vertices: []
       indices: 
       edges: []
@@ -547,7 +548,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ce8f45bc520aff850800000000000000
-      internalID: 6413020478584453356
+      internalID: 6985626698306143173
       vertices: []
       indices: 
       edges: []
@@ -709,6 +710,24 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      spritesheet_16: 182515998739034355
+      spritesheet_5: -1259408508766424310
+      spritesheet_2: 3042023047814558122
+      spritesheet_8: -3687489427716195
+      spritesheet_3: -5962389079421231736
+      spritesheet_4: -6251682230944352461
+      spritesheet_0: 5390129371266227295
+      spritesheet_12: -2630129836624287915
+      spritesheet_15: -4721245407534591264
+      spritesheet_1: 1111231892956182058
+      spritesheet_13: 4773514653529381359
+      spritesheet_11: 1269540525142108225
+      spritesheet_6: 8020143640844766479
+      spritesheet_14: 6985626698306143173
+      spritesheet_9: -1370661682523340017
+      spritesheet_7: 8956035608569109809
+      spritesheet_10: -8276262488406422588
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

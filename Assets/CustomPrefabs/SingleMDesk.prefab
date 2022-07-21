@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5743667082603438952}
   - component: {fileID: 6138677773885283407}
+  - component: {fileID: 577509477626891293}
+  - component: {fileID: 2199877386174265577}
+  - component: {fileID: 317449635328192005}
   m_Layer: 0
   m_Name: SingleMDesk
   m_TagString: Untagged
@@ -27,6 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 26.124716, y: -0.021784067, z: 3.9065561}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8948745757310240529}
   - {fileID: 432003866314403826}
@@ -49,6 +53,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.99, y: 1, z: 1}
   m_Center: {x: 0, y: 0.39, z: 0}
+--- !u!114 &577509477626891293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779834054881038353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd125fbfad0bf54db55abeff9e23f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHover: 0
+--- !u!114 &2199877386174265577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779834054881038353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50fc5051c6c560840a9c6d9d39130d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInfo:
+    itemName: Single PC Desk
+    itemDesc: This is a standard PC desk. You'll find these around the university
+  spriteSize: 0
+  playerCamera: {fileID: 0}
+  initRotation: {x: 0, y: 0, z: 0}
+  isUI: 0
+--- !u!114 &317449635328192005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779834054881038353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd125fbfad0bf54db55abeff9e23f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHover: 0
 --- !u!1001 &428180478269075428
 PrefabInstance:
   m_ObjectHideFlags: 0

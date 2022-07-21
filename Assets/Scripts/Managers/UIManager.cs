@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UIHelpers;
 
 public class UIManager : MonoBehaviour
 {
@@ -103,32 +104,33 @@ public class UIManager : MonoBehaviour
         GameManager.OnTutorialToggle -= ToggleTutorial;
     }
 
-    void setInputTutorials(PlayerInput input)
+    void setInputTutorials(Controller_Enum controller)
     {
-        string currentControlScheme = input.currentControlScheme;
-        if (currentControlScheme != "GamePad")
+        switch (controller)
         {
-            t_Sphere.SetText("Click the mouse wheel to see through walls");
-            t_Camera.SetText("Right click moves the camera around, you can also zoom in with the scroll wheel");
-            t_Interact.SetText("Left click on certain objects to bring up more info");
-            CrossHair.SetActive(false);
+            case Controller_Enum.Keyboard:
+                t_Sphere.SetText("Click the mouse wheel to see through walls");
+                t_Camera.SetText("Right click moves the camera around, you can also zoom in with the scroll wheel");
+                t_Interact.SetText("Left click on certain objects to bring up more info");
+                CrossHair.SetActive(false);
+                break;
+            case Controller_Enum.Xbox:
+                t_Sphere.SetText("Use Left Trigger to see through walls");
+                t_Camera.SetText("Left Stick moves the camera, while the Right Stick zooms in or out");
+                t_Interact.SetText("Right Trigger while looking at certain items will bring up more info");
+                CrossHair.SetActive(true);
+                break;
+            case Controller_Enum.Playstation:
+                break;
+            default:
+                break;
         }
-        else
-        {
-            t_Sphere.SetText("Use Left Trigger to see through walls");
-            t_Camera.SetText("Left Stick moves the camera, while the Right Stick zooms in or out");
-            t_Interact.SetText("Right Trigger while looking at certain items will bring up more info");
-            CrossHair.SetActive(true);
-        }
-
-
-
     }
 
     public void ToggleTutorial(bool isEnabled)
     {
         StopAllCoroutines();
-        StartCoroutine(FadeUI(tutorialGroup));
+        StartCoroutine(UI_Tools.FadeText(isEnabled? 1f : 0f, tutorialGroup.GetComponent<CanvasGroup>(), 2.5f));
     }
 
     public void RoomNameDisplay(string name)
@@ -138,34 +140,5 @@ public class UIManager : MonoBehaviour
             RN_UI.Display(name);
         }
     }
-
-    IEnumerator FadeUI(GameObject ui)
-    {
-        CanvasGroup cg = ui.GetComponent<CanvasGroup>();
-        if (cg.alpha == 0)
-        {
-            ui.SetActive(true);
-            while (cg.alpha != 1)
-            {
-                cg.alpha = Mathf.Lerp(cg.alpha, 1, Time.deltaTime * 2.5f);
-                if (cg.alpha > 0.98f) cg.alpha = 1;
-                yield return null;
-            }
-        }
-        else if (cg.alpha != 0)
-        {
-            while (cg.alpha != 0)
-            {
-                cg.alpha = Mathf.Lerp(cg.alpha, 0, Time.deltaTime * 2.5f);
-                if (cg.alpha < 0.09f) cg.alpha = 0;
-                yield return null;
-            }
-            ui.SetActive(false);
-        }
-
-    }
-
-
-
 
 }

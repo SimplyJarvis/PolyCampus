@@ -2,6 +2,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(Item_Info))]
+[CanEditMultipleObjects]
 public class ItemInfo_Inspector : Editor
 {
 
@@ -38,6 +39,8 @@ public class ItemInfo_Inspector : Editor
         {
             popUpItem.SetInfoPoint(JSONManager.GetInfoPoint(selectedRoom, selectedItem));
             PrefabUtility.RecordPrefabInstancePropertyModifications(popUpItem);
+            serializedObject.ApplyModifiedProperties();
+            
         }
         
         

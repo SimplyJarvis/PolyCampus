@@ -30,11 +30,13 @@ public class GameManager : MonoBehaviour
             _instance = this;
         }
 
-        c_FloorChange = InputManager.Instance.inputActionMap.FindAction("FloorChange");
-        c_FloorChange.performed += C_switchLevel;
+        
+        InputManager.onFloorChange.performed += C_switchLevel;
         InputManager.onMouseMove.started += ResetIdle;
+        InputManager.onMouseMove.performed += ResetIdle;
         InputManager.onJSMouseMove.started += ResetIdle;
         InputManager.onActivate.started += ResetIdle;
+        InputManager.onQuit.started += QuitGame;
     }
 
 
@@ -81,12 +83,25 @@ public class GameManager : MonoBehaviour
 
     private void C_switchLevel(InputAction.CallbackContext context)
     {
-        t_switchLevel();
+        if (!QuitUI.Instance.QuitStatus())
+        {
+            t_switchLevel();
+        }
     }
 
     private void ResetIdle(InputAction.CallbackContext context)
     {
         idleTimer = 0f;
+    }
+
+    void QuitGame(InputAction.CallbackContext context)
+    {
+        QuitApp();
+    }
+
+    public void QuitApp()
+    {
+        QuitUI.Instance.ToggleQuit();
     }
 
     void Update()
@@ -104,10 +119,12 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
-        c_FloorChange.performed -= C_switchLevel;
+        InputManager.onFloorChange.performed -= C_switchLevel;
         InputManager.onMouseMove.started -= ResetIdle;
+        InputManager.onMouseMove.performed -= ResetIdle;
         InputManager.onJSMouseMove.started -= ResetIdle;
         InputManager.onActivate.started -= ResetIdle;
+        InputManager.onQuit.started -= QuitGame;
     }
 }
 

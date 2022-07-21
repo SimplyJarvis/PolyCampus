@@ -85,6 +85,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "2955ff93-878b-443b-a2f2-72026fa2bf55",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -189,6 +198,17 @@
                 },
                 {
                     "name": "",
+                    "id": "919c9371-bffe-4632-8512-4cb7908e1eb9",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MainControls",
+                    "action": "FloorChange",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "421680e8-f57a-49cf-881f-f225aad9f0c2",
                     "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
@@ -202,7 +222,7 @@
                     "name": "",
                     "id": "67eb39df-34f0-4f63-810c-65cb8390aea7",
                     "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "GamePad",
                     "action": "Secondary",
@@ -211,12 +231,34 @@
                 },
                 {
                     "name": "",
-                    "id": "1d1c48ed-b2d8-4ecb-a208-95d39ef0fe52",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
+                    "id": "9439d2fe-5917-4ccc-994c-f6239f084251",
+                    "path": "<Keyboard>/e",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "MainControls",
                     "action": "Secondary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3187dff7-0dad-4b57-aefe-afe6ca8fbb53",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MainControls",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae3c64cc-a666-435d-b71e-aca7818913fe",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Quit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -230,6 +272,11 @@
             "devices": [
                 {
                     "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Keyboard>",
                     "isOptional": false,
                     "isOR": false
                 }

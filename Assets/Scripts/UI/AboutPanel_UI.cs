@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UIHelpers;
 
 public class AboutPanel_UI : MonoBehaviour
 {
     [SerializeField] CanvasGroup cg;
     [SerializeField] float fadeSpeed;
-    void OnEnable()
+    void Awake()
     {
         InputManager.onSecondary.started += ToggleAbout;
         InputManager.onSecondary.canceled += ToggleAbout;
@@ -20,26 +21,15 @@ public class AboutPanel_UI : MonoBehaviour
 
     void ToggleAbout(InputAction.CallbackContext context)
     {
-        
         StopAllCoroutines();
         if (context.started)
         {
-            StartCoroutine(FadeText(1f));
+            StartCoroutine(UI_Tools.FadeText(1f, cg, 2.5f));
         }
         else if (context.canceled)
         {
-            StartCoroutine(FadeText(0f));
+            StartCoroutine(UI_Tools.FadeText(0f, cg, 2.5f));
         }
     }
 
-    IEnumerator FadeText(float targetAlpha)
-    {
-        while (cg.alpha != targetAlpha)
-        {
-            cg.alpha = Mathf.Lerp(cg.alpha, targetAlpha, Time.deltaTime * fadeSpeed);
-            if (Mathf.Abs(cg.alpha - targetAlpha) < 0.02f) cg.alpha = targetAlpha;
-            yield return null;
-        }
-        yield return new WaitForSeconds(2f);
-    }
 }

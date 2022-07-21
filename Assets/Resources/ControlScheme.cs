@@ -107,6 +107,15 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""2955ff93-878b-443b-a2f2-72026fa2bf55"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -211,6 +220,17 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""919c9371-bffe-4632-8512-4cb7908e1eb9"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MainControls"",
+                    ""action"": ""FloorChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""421680e8-f57a-49cf-881f-f225aad9f0c2"",
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
@@ -224,7 +244,7 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""67eb39df-34f0-4f63-810c-65cb8390aea7"",
                     ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
                     ""action"": ""Secondary"",
@@ -233,12 +253,34 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1d1c48ed-b2d8-4ecb-a208-95d39ef0fe52"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
+                    ""id"": ""9439d2fe-5917-4ccc-994c-f6239f084251"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": ""MainControls"",
                     ""action"": ""Secondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3187dff7-0dad-4b57-aefe-afe6ca8fbb53"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MainControls"",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae3c64cc-a666-435d-b71e-aca7818913fe"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -252,6 +294,11 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Keyboard>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -281,6 +328,7 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
         m_Main_FloorChange = m_Main.FindAction("FloorChange", throwIfNotFound: true);
         m_Main_AnalogueSphereFade = m_Main.FindAction("AnalogueSphereFade", throwIfNotFound: true);
         m_Main_Secondary = m_Main.FindAction("Secondary", throwIfNotFound: true);
+        m_Main_Quit = m_Main.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -349,6 +397,7 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_FloorChange;
     private readonly InputAction m_Main_AnalogueSphereFade;
     private readonly InputAction m_Main_Secondary;
+    private readonly InputAction m_Main_Quit;
     public struct MainActions
     {
         private @ControlScheme m_Wrapper;
@@ -362,6 +411,7 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
         public InputAction @FloorChange => m_Wrapper.m_Main_FloorChange;
         public InputAction @AnalogueSphereFade => m_Wrapper.m_Main_AnalogueSphereFade;
         public InputAction @Secondary => m_Wrapper.m_Main_Secondary;
+        public InputAction @Quit => m_Wrapper.m_Main_Quit;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -398,6 +448,9 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                 @Secondary.started -= m_Wrapper.m_MainActionsCallbackInterface.OnSecondary;
                 @Secondary.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnSecondary;
                 @Secondary.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnSecondary;
+                @Quit.started -= m_Wrapper.m_MainActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
@@ -429,6 +482,9 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
                 @Secondary.started += instance.OnSecondary;
                 @Secondary.performed += instance.OnSecondary;
                 @Secondary.canceled += instance.OnSecondary;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -462,5 +518,6 @@ public partial class @ControlScheme : IInputActionCollection2, IDisposable
         void OnFloorChange(InputAction.CallbackContext context);
         void OnAnalogueSphereFade(InputAction.CallbackContext context);
         void OnSecondary(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
 }

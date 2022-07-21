@@ -57,6 +57,14 @@
         {
           "itemName": "Unknown",
           "itemDesc": "No one knows what this is..."
+        },
+        {
+          "itemName": "Dual Screen Desk",
+          "itemDesc": "This is a dual screen setup!"
+        },
+        {
+          "itemName": "Single PC Desk",
+          "itemDesc": "This is a standard PC desk. You'll find these around the university"
         }
       ]
     },
@@ -146,6 +154,19 @@
         {
           "itemName": "VHS Tape",
           "itemDesc": "Who is still using these?"
+        }
+      ]
+    },
+    {
+      "roomName": "SoCNET Labels",
+      "infoPoint": [
+        {
+          "itemName": "Socnet",
+          "itemDesc": "Socnet is a specialist network controlling some of the computing labs. It allows faster software updates and more customisation of the PCs. These PCs have a different login system and are managed by a dedicated team of technicians!"
+        },
+        {
+          "itemName": "Standard Lab",
+          "itemDesc": "The standard labs are managed by the central Univeristy IT team, called TIS. They use the same login that you use for your emails"
         }
       ]
     }

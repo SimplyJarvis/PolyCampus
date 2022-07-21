@@ -35,7 +35,7 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
-        CameraPos = new Vector3(activeFloor.position.x + cameraOffset, Camera.main.transform.position.y, CameraPos.z);
+        CameraPos = new Vector3(activeFloor.position.x + cameraOffset, MainCamera.transform.position.y, CameraPos.z);
 
         if (scrollVal != 0)
         {
@@ -73,7 +73,7 @@ public class CameraManager : MonoBehaviour
     {
         if (isMoving)
         {
-            mouseValue = (mouseStart - CursorController.Instance.MousePositionScreen);
+            mouseValue = (mouseStart - CursorController.Instance.MousePositionScreen) * 2;
         }
     }
 
@@ -85,7 +85,15 @@ public class CameraManager : MonoBehaviour
 
     public void OnScroll(InputAction.CallbackContext context)
     { //Scroll Zoom
-        scrollVal = context.ReadValue<Vector2>().y;
+        if (InputManager.Instance.GetActiveController() == Controller_Enum.Xbox)
+        {
+            scrollVal = context.ReadValue<Vector2>().y / 3;
+        }
+        else
+        {
+            scrollVal = context.ReadValue<Vector2>().y;
+        }
+        
     }
 
     void MoveCamera()
@@ -100,8 +108,10 @@ public class CameraManager : MonoBehaviour
             CameraPos.z = Mathf.MoveTowards(CameraPos.z, (cameraBoundPos.x + cameraBoundPos.y) / 2, Time.deltaTime * 2f); // If outside boundries move back towards middle
         }
 
+    
+
         //Camera X Axis Movement
-        if (cameraOffset > -8f && cameraOffset < 15f)
+        if (cameraOffset > -8f && cameraOffset < 22f)
         {
             cameraOffset += (mouseValue.y + mouseValue.x) < -0.05f || (mouseValue.y + mouseValue.x) > 0.05f ? (mouseValue.y + mouseValue.x) / (cameraSpeed) : 0f;
         }
@@ -110,7 +120,7 @@ public class CameraManager : MonoBehaviour
             cameraOffset = Mathf.MoveTowards(cameraOffset, 0, Time.deltaTime * 2f); // If outside boundries move back towards middle
         }
 
-        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, CameraPos, Time.deltaTime * 3.5f);
+        MainCamera.transform.position = Vector3.Lerp(MainCamera.transform.position, CameraPos, Time.deltaTime * 3.5f);
     }
 
     void FloorChange(int num)
