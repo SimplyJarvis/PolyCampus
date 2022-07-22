@@ -14,14 +14,10 @@ public class QuitUI : Singleton<QuitUI>
     {
         isQuitting = !isQuitting;
         StopAllCoroutines();
-        if (isQuitting)
-        {
-            StartCoroutine(UI_Tools.FadeText(1f, cg, fadeSpeed));
-        }
-        else
-        {
-            StartCoroutine(UI_Tools.FadeText(0f, cg, fadeSpeed));
-        }
+
+        StartCoroutine(UI_Tools.FadeText(isQuitting ? 1f : 0f, cg, fadeSpeed));
+        cg.blocksRaycasts = isQuitting ? true : false;
+
         AttachControls();
     }
 

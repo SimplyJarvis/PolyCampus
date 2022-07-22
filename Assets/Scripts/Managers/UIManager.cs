@@ -130,6 +130,7 @@ public class UIManager : MonoBehaviour
     public void ToggleTutorial(bool isEnabled)
     {
         StopAllCoroutines();
+        Debug.Log("Tutorial: " + isEnabled);
         StartCoroutine(UI_Tools.FadeText(isEnabled? 1f : 0f, tutorialGroup.GetComponent<CanvasGroup>(), 2.5f));
     }
 
