@@ -1,0 +1,13 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.3.6f1
+CRC: 2126549159
+HashAppended: 0
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: labscene-assets
+      Dependencies: {}
+    Info_1:
+      Name: labscene-scene
+      Dependencies:
+        Dependency_0: labscene-assets

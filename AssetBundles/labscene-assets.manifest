@@ -1,0 +1,548 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.3.6f1
+CRC: 2421810313
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7e6b0986bcbdb8012e159a9f078af44f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6e1fe1d066404dd1167f646fdd11ae89
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ce6963a03da8169835a41af8fa3f041c
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 84
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 102
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5b71ad40e238046238f9b0c6f33c3791, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9e15ca6e61da14043a1c37d3a938d9a1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 905554aecf290254b9c3fdcef419c0aa, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 50fc5051c6c560840a9c6d9d39130d47, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cdd125fbfad0bf54db55abeff9e23f32, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5bf73c6537144ff47a35d8570eb9376c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5cb06ecc67335eb498216dcf73290911, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ac9ebfb1766e3754ea2f1a0fae871c4a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 39fa3d8997a24136984ca6e2c99902bc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 241
+  Script: {instanceID: 0}
+- Class: 243
+  Script: {instanceID: 0}
+- Class: 245
+  Script: {instanceID: 0}
+- Class: 329
+  Script: {instanceID: 0}
+- Class: 363
+  Script: {instanceID: 0}
+- Class: 850595691
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: infoPoint
+- AssemblyName: Unity.InputSystem
+  ClassName: UnityEngine.InputSystem.InputAction
+- AssemblyName: Unity.InputSystem
+  ClassName: UnityEngine.InputSystem.InputActionMap
+- AssemblyName: Unity.InputSystem
+  ClassName: UnityEngine.InputSystem.InputBinding
+- AssemblyName: Unity.InputSystem
+  ClassName: UnityEngine.InputSystem.InputControlScheme
+- AssemblyName: Unity.InputSystem
+  ClassName: UnityEngine.InputSystem.InputControlScheme/DeviceRequirement
+- AssemblyName: Unity.Postprocessing.Runtime
+  ClassName: UnityEngine.Rendering.PostProcessing.BoolParameter
+- AssemblyName: Unity.Postprocessing.Runtime
+  ClassName: UnityEngine.Rendering.PostProcessing.ColorParameter
+- AssemblyName: Unity.Postprocessing.Runtime
+  ClassName: UnityEngine.Rendering.PostProcessing.FloatParameter
+- AssemblyName: Unity.Postprocessing.Runtime
+  ClassName: UnityEngine.Rendering.PostProcessing.TextureParameter
+- AssemblyName: Unity.Postprocessing.Runtime
+  ClassName: UnityEngine.Rendering.PostProcessing.Vector2Parameter
+- AssemblyName: Unity.Postprocessing.Runtime
+  ClassName: UnityEngine.Rendering.PostProcessing.VignetteModeParameter
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FaceInfo_Legacy
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FontAssetCreationSettings
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.KerningTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_Character
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontFeatureTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontWeightPair
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.FaceInfo
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.Glyph
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphMetrics
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphRect
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.LowLevel.GlyphValueRecord
+Assets:
+- Assets/PolygonOffice/Models/SM_Bld_Wall_Baseboard_Door_Large_01.fbx
+- Assets/PolygonOffice/Models/SM_Bld_Pillar_Interior_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Table_02.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Whiteboard_01_Convex.asset
+- Assets/Scenes/LabScene/Lightmap-17_comp_shadowmask.png
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Tower_Flat_01.prefab
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_Server_Cabinet_02_Full.prefab
+- Assets/CustomPrefabs/FireExtinguisher Variant.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Whiteboard_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Laptop_Folding_02.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Tower_Flat_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_Camera_Tripod_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Coffee_Tray_01_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_Server_Node_02.prefab
+- Assets/PolygonOffice/Materials/PolygonOffice_Material_04_A.mat
+- Assets/PolygonOffice/Models/SM_Bld_Wall_Baseboard_Door_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Chair_05_Convex.asset
+- Assets/CustomPrefabs/FireAlarmLight.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Server_Cabinet_02_Full_Convex.asset
+- Assets/Materials/Dust.mat
+- Assets/PolygonOffice/Prefabs/Props/Kitchen Props/SM_Prop_Dishes_02.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Chair_03_Convex 1.asset
+- Assets/PolygonOffice/Models/SM_Prop_Table_Round_02_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Desklamp_03_Convex 2.asset
+- Assets/Sounds/Arcade_Positive_Jingle_Short_02_2.wav
+- Assets/PolygonOffice/Models/SM_Prop_CorkBoard_02_Convex.asset
+- Assets/PolygonOffice/Prefabs/Buildings/SM_Bld_Wall_Trim_Window_03.prefab
+- Assets/PolygonOffice/Prefabs/Props/Wall Props/SM_Prop_ProjectorScreen_02_Down.prefab
+- Assets/PolygonOffice/Models/SM_Prop_GreenScreen_01_Convex 1.asset
+- Assets/PolygonOffice/Prefabs/Props/Wall Props/SM_Prop_AirVent_01.prefab
+- Assets/Animations/LightHolder.controller
+- Assets/PolygonOffice/Models/SM_Prop_Desk_04.fbx
+- Assets/Animations/BlankClick.anim
+- Assets/PolygonOffice/Models/SM_Prop_Laptop_01_Convex 1.asset
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_CoffeeTable_03.prefab
+- Assets/PolygonOffice/Models/SM_Prop_AirVent_01_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Wall Props/SM_Prop_TV_Wall_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Cabinets_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_Bin_03.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Chair_09_Convex.asset
+- Assets/PolygonOffice/Prefabs/Buildings/SM_Bld_Floor_Carpet_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Dishes_02_Convex.asset
+- Assets/Scenes/LabScene/Lightmap-2_comp_light.exr
+- Assets/Materials/SphericalMask.mat
+- Assets/Scenes/LabScene/Lightmap-17_comp_dir.png
+- Assets/PolygonOffice/Models/SM_Prop_Server_Cabinet_02_Full.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Desk_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Coffee_Tray_01.prefab
+- Assets/Scenes/LabScene/Lightmap-12_comp_light.exr
+- Assets/PolygonOffice/Models/SM_Prop_Desk_02_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Chair_10.prefab
+- Assets/Scenes/LabScene/Lightmap-9_comp_light.exr
+- Assets/PolygonOffice/Textures/PolygonOffice_Texture_Sceen_04.png
+- Assets/Scenes/LabScene/Lightmap-0_comp_light.exr
+- Assets/PolygonOffice/Models/SM_Prop_Speaker_Computer_01_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Kitchen Props/SM_Prop_Kettle_01.prefab
+- Assets/PolygonOffice/Prefabs/Buildings/SM_Bld_Wall_Baseboard_Door_01.prefab
+- Assets/PolygonOffice/Models/SM_Bld_Door_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Shelf_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Wall Props/SM_Prop_WallDressing_03.prefab
+- Assets/PolygonOffice/Prefabs/Props/Kitchen Props/SM_Prop_Kitchen_Cabinet_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Sign_Exit_01.fbx
+- Assets/Materials/Sky.mat
+- Assets/Resources/ControlScheme.inputactions
+- Assets/PolygonOffice/Materials/PolygonOffice_Material_01_A.mat
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_EnergyDrink_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Setup_02_Convex 1.asset
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_DeskToy_NewtownsCradle_01.prefab
+- Assets/Scenes/LabScene/Lightmap-10_comp_dir.png
+- Assets/PolygonOffice/Models/SM_Prop_TV_Wall_01.fbx
+- Assets/CustomPrefabs/SingleMDesk.prefab
+- Assets/Sounds/MainAudioMix.mixer
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Keyboard_01.prefab
+- Assets/Materials/SphericalMaskGlass.mat
+- Assets/PolygonOffice/Models/SM_Prop_Donut_Box_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Chair_02.fbx
+- Assets/Scenes/LabScene/Lightmap-1_comp_light.exr
+- Assets/PolygonOffice/Models/SM_Prop_Desk_02.fbx
+- Assets/Scenes/LabScene/Lightmap-15_comp_shadowmask.png
+- Assets/CustomPrefabs/Text.prefab
+- Assets/PolygonOffice/Models/SM_Prop_WallDressing_03.fbx
+- Assets/Sounds/Music/Casual Theme #1 (Looped).wav
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Tower_01.prefab
+- Assets/PolygonOffice/Prefabs/Buildings/SM_Bld_Wall_Baseboard_01.prefab
+- Assets/Sprite/floorArrow.png
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Chair_04.prefab
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Mouse_01.prefab
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Monitor_04.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Box_01_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Desklamp_03.prefab
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_Whiteboard_01.prefab
+- Assets/PolygonOffice/Prefabs/Props/Wall Props/SM_Prop_Sign_Exit_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Book_Group_02.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Box_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_GreenScreen_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_CardboardBox_Stack_01_Convex.asset
+- Assets/Fonts/WorkSans-VariableFont_wght SDF.asset
+- Assets/PolygonOffice/Models/SM_Prop_Server_Node_02_Convex.asset
+- Assets/CustomPrefabs/FloorName.prefab
+- Assets/Sounds/ui_click_rollover_misc_04.wav
+- Assets/Animations/spritesheet_6.controller
+- Assets/PolygonOffice/Models/SM_Prop_Cake_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Cart_01.fbx
+- Assets/Sprite/Controller Icons/button_xbox_digital_a_1.png
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Tower_02.fbx
+- Assets/Fonts/WorkSans-VariableFont_wght.ttf
+- Assets/PolygonOffice/Models/SM_Prop_AirVent_01.fbx
+- Assets/PolygonOffice/Models/SM_Bld_Floor_Carpet_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Chair_BeanBag_04.prefab
+- Assets/Scenes/LabScene/Lightmap-3_comp_light.exr
+- Assets/PolygonOffice/Models/SM_Prop_Shelf_02.fbx
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Desk_02.prefab
+- Assets/PolygonOffice/Models/SM_Prop_CubicalWall_01.fbx
+- Assets/PolygonOffice/Materials/Misc/PolygonOffice_Material_Screen_06.mat
+- Assets/PolygonOffice/Models/SM_Prop_Fire_Extinguisher_01_Convex.asset
+- Assets/Scenes/LabScene/Lightmap-12_comp_dir.png
+- Assets/PolygonOffice/Prefabs/Buildings/SM_Bld_Wall_Glass_Door_01.prefab
+- Assets/Sounds/FireAlarm.wav
+- Assets/PolygonOffice/Models/SM_Prop_Couch_02_Convex 1.asset
+- Assets/PolygonOffice/Models/SM_Prop_Cake_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_VHS_Tape_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Neon_Cactus_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Speaker_Computer_01.fbx
+- Assets/Videos/RT_Camera.renderTexture
+- Assets/Scenes/LabScene/Lightmap-8_comp_light.exr
+- Assets/PolygonOffice/Models/SM_Prop_CoffeeTable_03_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Tower_02.prefab
+- Assets/CustomPrefabs/NormalDesk.prefab
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Console_PlayBox_01.prefab
+- Assets/PolygonOffice/Materials/Misc/PolygonOffice_Material_Screen_01.mat
+- Assets/PolygonOffice/Models/SM_Prop_Server_Cabinet_01_Full.fbx
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Laptop_01.prefab
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Laptop_Folding_02.prefab
+- Assets/Scenes/LabScene/Lightmap-3_comp_shadowmask.png
+- Assets/PolygonOffice/Models/SM_Prop_Fan_Pedistal_01_Convex 2.asset
+- Assets/Sprite/Controller Icons/button_xbox_analog_trigger_dark_2.png
+- Assets/PolygonOffice/Models/SM_Prop_CubicalWall_01_Convex.asset
+- Assets/PolygonOffice/Textures/PolygonOffice_Texture_Sceen_02.png
+- Assets/Sounds/collision_paper_soft_02.wav
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Neon_Cactus_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Kettle_01.fbx
+- Assets/PolygonOffice/Prefabs/Buildings/SM_Bld_Door_05.prefab
+- Assets/Scenes/LabScene/Lightmap-10_comp_shadowmask.png
+- Assets/PolygonOffice/Textures/PolygonOffice_Texture_Sceen_03.png
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_Plant_04.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Monitor_Curved_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Rolling_TV_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Wall Props/SM_Prop_CorkBoard_02.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Couch_03.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Monitor_04_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Chair_10.fbx
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_Fan_Pedistal_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Photocopier_01_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Mouse_02.prefab
+- Assets/CustomPrefabs/FireAlarmSwitch.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Monitor_Double_01_Convex 1.asset
+- Assets/PolygonOffice/Models/SM_Prop_Desk_03_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_DeskToy_NewtownsCradle_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Keyboard_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Desk_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Table_02_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_Server_Cabinet_01_Full.prefab
+- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+- Assets/Scenes/LabScene/OcclusionCullingData.asset
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Chair_06.prefab
+- Assets/PolygonOffice/Prefabs/Buildings/SM_Bld_Pillar_Interior_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Kitchen_Counter_01.fbx
+- Assets/Sprite/PopUp2.png
+- Assets/PolygonOffice/Models/SM_Prop_Desk_04_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Chair_03.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Plant_04_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Chair_02_Convex 2.asset
+- Assets/Sprite/Dust.png
+- Assets/PolygonOffice/Models/SM_Prop_Donut_Box_01.fbx
+- Assets/PolygonOffice/Prefabs/Buildings/SM_Bld_Pillar_Interior_04.prefab
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Cabinets_03.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Chair_09.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Printer_01_Convex.asset
+- Assets/PolygonOffice/Textures/PolygonOffice_Texture_01_A.png
+- Assets/PolygonOffice/Models/SM_Prop_Kitchen_Cabinet_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Chair_01.fbx
+- Assets/Scenes/LabScene/Lightmap-9_comp_shadowmask.png
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Chair_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Neon_Cactus_01_Convex.asset
+- Assets/Sprite/Controller Icons/button_xbox_digital_b_1.png
+- Assets/Scenes/LabScene/Lightmap-1_comp_shadowmask.png
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Tower_Modern_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Book_Phone_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Chair_01_Convex 2.asset
+- Assets/CustomPrefabs/ClickParticles.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Shelf_04_Convex.asset
+- Assets/Scenes/LabScene/Lightmap-9_comp_dir.png
+- Assets/Scenes/LabScene/Lightmap-4_comp_shadowmask.png
+- Assets/Scenes/LabScene/Lightmap-11_comp_shadowmask.png
+- Assets/BakedSettings.lighting
+- Assets/PolygonOffice/Models/SM_Prop_Kettle_01_Convex.asset
+- Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+- Assets/PolygonOffice/Models/SM_Prop_ProjectorScreen_02_Down_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Camera_Tripod_01_Convex 1.asset
+- Assets/PolygonOffice/Models/SM_Prop_Chair_06_Convex 1.asset
+- Assets/Scenes/LabScene/Lightmap-13_comp_shadowmask.png
+- Assets/PolygonOffice/Models/SM_Prop_Kitchen_Counter_01_Convex.asset
+- Assets/Scenes/LabScene/Lightmap-17_comp_light.exr
+- Assets/PolygonOffice/Models/SM_Prop_Desk_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Book_Phone_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Shelf_04.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Sign_Exit_01_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Shelf_02.prefab
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_CubicalWall_01.prefab
+- Assets/CustomPrefabs/GamesDesk.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Desklamp_03.fbx
+- Assets/Scenes/LabScene/Lightmap-6_comp_shadowmask.png
+- Assets/Scenes/LabScene/Lightmap-6_comp_dir.png
+- Assets/PolygonOffice/Models/SM_Prop_Plant_04.fbx
+- Assets/PolygonOffice/Models/SM_Prop_VHS_Tape_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Kitchen Props/SM_Prop_Donut_Box_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Photocopier_01_Convex 1.asset
+- Assets/PolygonOffice/Models/SM_Prop_Dishes_04_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Desk_04.prefab
+- Assets/Materials/SpriteOnTop.mat
+- Assets/CustomPrefabs/EmptyDesk.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Dishes_02.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Chair_03.fbx
+- Assets/Scenes/LabScene/Lightmap-0_comp_dir.png
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Book_Group_02.prefab
+- Assets/Videos/CameraMoveExample.mp4
+- Assets/PolygonOffice/Models/SM_Bld_Pillar_Interior_04.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Mouse_03_Convex.asset
+- Assets/Scenes/LabScene/Lightmap-5_comp_shadowmask.png
+- Assets/Materials/SphericalMask.shader
+- Assets/PolygonOffice/Models/SM_Prop_Chair_06.fbx
+- Assets/PolygonOffice/Models/SM_Bld_Wall_Baseboard_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Tower_02_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Table_Round_02.prefab
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Cabinets_01.prefab
+- Assets/PolygonOffice/Models/SM_Bld_Door_05.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Shelf_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_GreenScreen_01.fbx
+- Assets/PolygonOffice/Materials/Misc/PolygonOffice_Material_Screen_04.mat
+- Assets/PolygonOffice/Models/SM_Prop_Console_PlayBox_01.fbx
+- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+- Assets/Sprite/remove-cross.png
+- Assets/Scenes/LabScene/Lightmap-16_comp_dir.png
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Setup_01_Convex 1.asset
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Setup_02.fbx
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_Rolling_TV_01.prefab
+- Assets/Sprite/ClickSpriteSheet.png
+- Assets/PolygonOffice/Models/SM_Prop_Couch_03_Convex 1.asset
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Monitor_Double_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Couch_02.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Tower_Flat_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_EnergyDrink_01_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Kitchen Props/SM_Prop_Cake_01.prefab
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Console_MegaCube_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Console_MegaCube_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Printer_01.prefab
+- Assets/PolygonOffice/Textures/PolygonOffice_Texture_Sceen_Arcade_01.png
+- Assets/PolygonOffice/Prefabs/Props/Kitchen Props/SM_Prop_Donut_Cream_01.prefab
+- Assets/Scenes/LabScene/Lightmap-0_comp_shadowmask.png
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_ArcadeMachine_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_ArcadeMachine_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Chair_05.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Shelf_02_Convex.asset
+- Assets/Scenes/LabScene/Lightmap-5_comp_light.exr
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_CardboardBox_Stack_01.prefab
+- Assets/Scenes/LabScene/Lightmap-7_comp_dir.png
+- Assets/Scenes/LabScene/Lightmap-5_comp_dir.png
+- Assets/PolygonOffice/Models/SM_Prop_FireAlarm_Switch_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Tower_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Chair_10_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Chair_09.prefab
+- Assets/PolygonOffice/Models/SM_Prop_CardboardBox_Stack_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_ProjectorScreen_02_Down.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Mouse_02.fbx
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Setup_02.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Couch_02.fbx
+- Assets/Scenes/LabScene/Lightmap-8_comp_dir.png
+- Assets/PolygonOffice/Prefabs/Props/Wall Props/SM_Prop_Fire_Extinguisher_01.prefab
+- Assets/PolygonOffice/Materials/Misc/PolygonOffice_Material_Screen_02.mat
+- Assets/PolygonOffice/Models/SM_Prop_Fan_Pedistal_01.fbx
+- Assets/Sprite/button_xbox_digital_start_1.png
+- Assets/PolygonOffice/Models/SM_Prop_Laptop_01.fbx
+- Assets/PolygonOffice/Models/SM_Bld_Wall_Baseboard_Window_02.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Keyboard_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Bld_Wall_Trim_Window_03.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Monitor_Curved_01.fbx
+- Assets/Scenes/LabScene/Lightmap-6_comp_light.exr
+- Assets/PolygonOffice/Models/SM_Prop_Book_Phone_01_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_Photocopier_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Bin_03.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Chair_04_Convex 2.asset
+- Assets/TextMesh Pro/Shaders/TMP_SDF.shader
+- Assets/Animations/FireAlarmLights.controller
+- Assets/PolygonOffice/Models/SM_Prop_TV_Wall_01_Convex.asset
+- Assets/Scenes/LabScene/Lightmap-8_comp_shadowmask.png
+- Assets/PolygonOffice/Models/SM_Prop_Printer_01.fbx
+- Assets/Animations/FireAlarm.anim
+- Assets/PolygonOffice/Models/SM_Prop_Table_02.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Coffee_Tray_01.fbx
+- Assets/PolygonOffice/Textures/PolygonOffice_Texture_Sceen_01.png
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Desk_03.prefab
+- Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+- Assets/PolygonOffice/Models/SM_Prop_Donut_Cream_01.fbx
+- Assets/PolygonOffice/Materials/PolygonOffice_Material_Glass.mat
+- Assets/Scenes/LabScene/Lightmap-12_comp_shadowmask.png
+- Assets/PolygonOffice/Models/SM_Prop_Kitchen_Cabinet_01.fbx
+- Assets/Materials/Custom_AlphaFallOff.mat
+- Assets/Fonts/Oswald-VariableFont_wght.ttf
+- Assets/PolygonOffice/Models/SM_Prop_ArcadeMachine_01_Convex.asset
+- Assets/Scenes/LabScene/Lightmap-14_comp_light.exr
+- Assets/PolygonOffice/Models/SM_Prop_Chair_04.fbx
+- Assets/Fonts/Oswald-VariableFont_wght SDF.asset
+- Assets/PolygonOffice/Prefabs/Props/Kitchen Props/SM_Prop_Kitchen_Counter_01.prefab
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Monitor_Double_01.prefab
+- Assets/Scenes/LabScene/Lightmap-16_comp_light.exr
+- Assets/Scenes/LabScene/Lightmap-10_comp_light.exr
+- Assets/Scenes/LabScene/Lightmap-16_comp_shadowmask.png
+- Assets/PolygonOffice/Models/SM_Prop_Cart_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Bin_03_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_CorkBoard_02.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Fan_Pedistal_01_Convex 1.asset
+- Assets/PolygonOffice/Models/SM_Prop_Fire_Extinguisher_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Photocopier_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_EnergyDrink_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Dishes_04.fbx
+- Assets/Scenes/LabScene/Lightmap-14_comp_dir.png
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Tower_Modern_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Server_Node_02.fbx
+- Assets/Materials/Extinguisher.mat
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Tower_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Kitchen Props/SM_Prop_Dishes_04.prefab
+- Assets/Animations/ClickSprite.anim
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Setup_01.fbx
+- Assets/PolygonOffice/Prefabs/Buildings/SM_Bld_Wall_Baseboard_Door_Large_01.prefab
+- Assets/Videos/RT_Sphere.renderTexture
+- Assets/Videos/SphereExample.mp4
+- Assets/Scenes/LabScene/Lightmap-15_comp_dir.png
+- Assets/Materials/AlphaFallOff.shader
+- Assets/PolygonOffice/Textures/Emissive_01.png
+- Assets/PolygonOffice/Models/SM_Prop_Camera_Tripod_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Table_Round_02.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Mouse_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Cabinets_03.fbx
+- Assets/PolygonOffice/Models/SM_Bld_Wall_Glass_Door_01.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Book_Group_02_Convex.asset
+- Assets/Scenes/LabScene/Lightmap-14_comp_shadowmask.png
+- Assets/PolygonOffice/Models/SM_Prop_CoffeeTable_03.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Rolling_TV_01_Convex.asset
+- Assets/Scenes/LabScene/Lightmap-1_comp_dir.png
+- Assets/Scenes/LabScene/Lightmap-11_comp_light.exr
+- Assets/Scenes/LabScene/Lightmap-7_comp_light.exr
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Tower_Modern_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Chair_BeanBag_04.fbx
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Box_01.prefab
+- Assets/Scenes/LabScene/Lightmap-2_comp_dir.png
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Shelf_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Console_PlayBox_01_Convex.asset
+- Assets/Videos/InteractExample.mp4
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Mouse_01.fbx
+- Assets/PolygonOffice/Prefabs/Props/Misc/SM_Prop_Cart_01.prefab
+- Assets/Scenes/LabScene/Lightmap-4_comp_dir.png
+- Assets/Scenes/LabScene/ReflectionProbe-0.exr
+- Assets/Scenes/LabScene/Lightmap-4_comp_light.exr
+- Assets/Videos/RT_Interact.renderTexture
+- Assets/Scenes/LabScene/Lightmap-2_comp_shadowmask.png
+- Assets/Scenes/LabScene/Lightmap-15_comp_light.exr
+- Assets/PolygonOffice/Models/SM_Prop_Chair_05.fbx
+- Assets/PolygonOffice/Models/SM_Prop_WallDressing_03_Convex.asset
+- Assets/CustomPrefabs/HighSpecDesk.prefab
+- Assets/Resources/MainScene_Post.asset
+- Assets/PolygonOffice/Prefabs/Buildings/SM_Bld_Wall_Baseboard_Window_02.prefab
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Shelf_04.prefab
+- Assets/PolygonOffice/Prefabs/Buildings/SM_Bld_Door_01.prefab
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_VHS_Tape_01.prefab
+- Assets/PolygonOffice/Textures/PolygonOffice_Texture_04_A.png
+- Assets/Scenes/LabScene/Lightmap-13_comp_dir.png
+- Assets/PolygonOffice/Models/SM_Prop_FireAlarm_Switch_01.fbx
+- Assets/Scenes/LabScene/Lightmap-7_comp_shadowmask.png
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Couch_03.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Server_Cabinet_01_Full_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Speaker_Computer_01.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Desk_03.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Computer_Monitor_04.fbx
+- Assets/PolygonOffice/Models/SM_Prop_Chair_BeanBag_04_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_DeskToy_NewtownsCradle_01_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Monitor_Curved_01.prefab
+- Assets/Scenes/LabScene/Lightmap-11_comp_dir.png
+- Assets/Scenes/LabScene/Lightmap-13_comp_light.exr
+- Assets/PolygonOffice/Prefabs/Props/Furniture/SM_Prop_Chair_02.prefab
+- Assets/PolygonOffice/Models/SM_Prop_Console_MegaCube_01_Convex.asset
+- Assets/PolygonOffice/Models/SM_Prop_Donut_Cream_01_Convex.asset
+- Assets/PolygonOffice/Prefabs/Props/Desk Props/SM_Prop_Computer_Setup_01.prefab
+- Assets/Scenes/LabScene/Lightmap-3_comp_dir.png
+- Assets/PolygonOffice/Materials/Misc/PolygonOffice_Material_Screen_03.mat
+Dependencies: []

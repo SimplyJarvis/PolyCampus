@@ -54,9 +54,41 @@ jobs:
           buildName: PolyCampus
           buildsPath: builds
 
+      # Build asset bundles
+      - name: Build Asset Bundles
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: 6000.3.6f1
+          targetPlatform: WebGL
+          buildMethod: BundleBuilder.BuildAllSceneBundlesCommandLine
+          versioning: None
+
+      # Zip WebGL build
+      - name: Zip WebGL Build
+        run: |
+          cd builds/WebGL
+          zip -r ../../PolyCampus-WebGL.zip .
+          cd ../..
+
+      # Zip Asset Bundles
+      - name: Zip Asset Bundles
+        run: |
+          zip -r PolyCampus-AssetBundles.zip AssetBundles
+
       # Upload build artifacts
       - name: Upload Build
         uses: actions/upload-artifact@v4
         with:
           name: Build-WebGL
-          path: builds/WebGL
+          path: PolyCampus-WebGL.zip
+
+      # Upload asset bundles
+      - name: Upload Asset Bundles
+        uses: actions/upload-artifact@v4
+        with:
+          name: AssetBundles
+          path: PolyCampus-AssetBundles.zip
